@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>fusion</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Kfusion</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;fusion
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="fusion-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="fusion-module.html">Module fusion</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Variable statements.Statement.tokens=statements.Statement-class.html#tokens,Module tokens=tokens-module.html,Variable tokens.tokens=tokens-module.html#tokens"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-0', 'tokens', 'link-0');">tokens</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Module function=function-module.html,Class function.function=function.function-class.html,Variable fusion.fusionNode.function=fusion.fusionNode-class.html#function"><a title="function
+function.function
+fusion.fusionNode.function" class="py-name" href="#" onclick="return doclink('link-1', 'function', 'link-1');">function</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"> </tt>
+<a name="fuse"></a><div id="fuse-def"><a name="L4"></a><tt class="py-lineno">  4</tt> <a class="py-toggle" href="#" id="fuse-toggle" onclick="return toggle('fuse');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion-module.html#fuse">fuse</a><tt class="py-op">(</tt><tt class="py-param">calls</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fuse-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="fuse-expanded"><a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line">        <tt class="py-docstring">"""fuses a series of function calls"""</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line">        <tt class="py-name">name</tt> <tt class="py-op">=</tt> <tt id="link-2" class="py-name" targets="Variable fusion.fusionTree.calls=fusion.fusionTree-class.html#calls"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-2', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line">        <tt class="py-name">name</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Variable tokens.dirtyToken.value=tokens.dirtyToken-class.html#value"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-3', 'value', 'link-3');">value</a></tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line">        <tt class="py-name">name</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Variable function.function.type=function.function-class.html#type,Variable fusion.funfusion.type=fusion.funfusion-class.html#type,Variable fusion.fusionTree.type=fusion.fusionTree-class.html#type,Variable statements.Statement.type=statements.Statement-class.html#type,Variable tokens.dirtyToken.type=tokens.dirtyToken-class.html#type"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-4', 'type', 'link-4');">type</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'ID'</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-5" class="py-name" targets="Method function.function.call()=function.function-class.html#call,Variable function.functionCall.call=function.functionCall-class.html#call,Variable fusion.fusionNode.call=fusion.fusionNode-class.html#call,Method kernel.kernel.call()=kernel.kernel-class.html#call"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-5', 'call', 'link-5');">call</a></tt> <tt class="py-keyword">in</tt> <tt id="link-6" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-6', 'calls', 'link-2');">calls</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">                <tt class="py-name">name</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-7', 'value', 'link-3');">value</a></tt> <tt class="py-op">+=</tt> <tt id="link-8" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-8', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-9', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-10', 'value', 'link-3');">value</a></tt> <tt class="py-op">+</tt> <tt class="py-string">"_"</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">        <tt class="py-name">IDS</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-11" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-11', 'call', 'link-5');">call</a></tt> <tt class="py-keyword">in</tt> <tt id="link-12" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-12', 'calls', 'link-2');">calls</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">                <tt class="py-name">IDS</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-13" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-13', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Variable function.function.ID=function.function-class.html#ID,Variable function.functionCall.ID=function.functionCall-class.html#ID,Variable fusion.fusionNode.ID=fusion.fusionNode-class.html#ID,Variable kernel.kernel.ID=kernel.kernel-class.html#ID,Variable tokens.dirtyToken.ID=tokens.dirtyToken-class.html#ID"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-14', 'ID', 'link-14');">ID</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">        <tt class="py-name">newfun</tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name" targets="Class function.functionCall=function.functionCall-class.html"><a title="function.functionCall" class="py-name" href="#" onclick="return doclink('link-15', 'functionCall', 'link-15');">functionCall</a></tt><tt class="py-op">(</tt><tt class="py-name">name</tt><tt class="py-op">)</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">        <tt class="py-name">IDS</tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name" targets="Function tokens.removeDuplicates()=tokens-module.html#removeDuplicates"><a title="tokens.removeDuplicates" class="py-name" href="#" onclick="return doclink('link-16', 'removeDuplicates', 'link-16');">removeDuplicates</a></tt><tt class="py-op">(</tt><tt class="py-name">IDS</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">        <tt id="link-17" class="py-name" targets="Variable function.function.args=function.function-class.html#args,Variable function.functionCall.args=function.functionCall-class.html#args,Variable fusion.fusionNode.args=fusion.fusionNode-class.html#args,Variable kernel.kernel.args=kernel.kernel-class.html#args,Variable kernelInvocation.KernelInvocation.args=kernelInvocation.KernelInvocation-class.html#args"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-17', 'args', 'link-17');">args</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-18" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-18', 'call', 'link-5');">call</a></tt> <tt class="py-keyword">in</tt> <tt id="link-19" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-19', 'calls', 'link-2');">calls</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">arg</tt> <tt class="py-keyword">in</tt> <tt id="link-20" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-20', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-21', 'args', 'link-17');">args</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">                        <tt id="link-22" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-22', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">arg</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt id="link-23" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-23', 'args', 'link-17');">args</a></tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name"><a title="tokens.removeDuplicates" class="py-name" href="#" onclick="return doclink('link-24', 'removeDuplicates', 'link-16');">removeDuplicates</a></tt><tt class="py-op">(</tt><tt id="link-25" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-25', 'args', 'link-17');">args</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">arg</tt> <tt class="py-keyword">in</tt> <tt id="link-26" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-26', 'args', 'link-17');">args</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">                <tt class="py-name">newfun</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method function.functionCall.addArg()=function.functionCall-class.html#addArg"><a title="function.functionCall.addArg" class="py-name" href="#" onclick="return doclink('link-27', 'addArg', 'link-27');">addArg</a></tt><tt class="py-op">(</tt><tt class="py-name">arg</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">        <tt class="py-name">newfun</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Variable function.functionCall.children=function.functionCall-class.html#children,Variable statements.Statement.children=statements.Statement-class.html#children"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-28', 'children', 'link-28');">children</a></tt> <tt class="py-op">=</tt> <tt id="link-29" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-29', 'calls', 'link-2');">calls</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">newfun</tt> </tt>
+</div><a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="funfusion"></a><div id="funfusion-def"><a name="L27"></a><tt class="py-lineno"> 27</tt> <a class="py-toggle" href="#" id="funfusion-toggle" onclick="return toggle('funfusion');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="fusion.funfusion-class.html">funfusion</a><tt class="py-op">:</tt> </tt>
+</div><div id="funfusion-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="funfusion-expanded"><a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">        <tt class="py-docstring">"""fuses a series of function calls"""</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt id="link-30" class="py-name" targets="Variable fusion.funfusion.fusedcall=fusion.funfusion-class.html#fusedcall"><a title="fusion.funfusion.fusedcall" class="py-name" href="#" onclick="return doclink('link-30', 'fusedcall', 'link-30');">fusedcall</a></tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt id="link-31" class="py-name" targets="Variable fusion.funfusion.funs=fusion.funfusion-class.html#funs"><a title="fusion.funfusion.funs" class="py-name" href="#" onclick="return doclink('link-31', 'funs', 'link-31');">funs</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt id="link-32" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-32', 'type', 'link-4');">type</a></tt><tt class="py-op">=</tt><tt class="py-string">''</tt> </tt>
+<a name="funfusion.__init__"></a><div id="funfusion.__init__-def"><a name="L32"></a><tt class="py-lineno"> 32</tt> <a class="py-toggle" href="#" id="funfusion.__init__-toggle" onclick="return toggle('funfusion.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion.funfusion-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">calls</tt><tt class="py-op">,</tt><tt class="py-param">fusiontype</tt><tt class="py-op">=</tt><tt class="py-string">"VERTICAL"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="funfusion.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="funfusion.__init__-expanded"><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="fusion.funfusion.funs" class="py-name" href="#" onclick="return doclink('link-33', 'funs', 'link-31');">funs</a></tt> <tt class="py-op">=</tt> <tt id="link-34" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-34', 'calls', 'link-2');">calls</a></tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="fusion.funfusion.fusedcall" class="py-name" href="#" onclick="return doclink('link-35', 'fusedcall', 'link-30');">fusedcall</a></tt> <tt class="py-op">=</tt> <tt id="link-36" class="py-name" targets="Function fusion.fuse()=fusion-module.html#fuse"><a title="fusion.fuse" class="py-name" href="#" onclick="return doclink('link-36', 'fuse', 'link-36');">fuse</a></tt><tt class="py-op">(</tt><tt id="link-37" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-37', 'calls', 'link-2');">calls</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-38', 'type', 'link-4');">type</a></tt> <tt class="py-op">=</tt> <tt class="py-name">fusiontype</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-string">"creating fusion of type: "</tt><tt class="py-op">,</tt> <tt class="py-name">fusiontype</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-39', 'type', 'link-4');">type</a></tt> </tt>
+</div><a name="funfusion.construct"></a><div id="funfusion.construct-def"><a name="L37"></a><tt class="py-lineno"> 37</tt> <a class="py-toggle" href="#" id="funfusion.construct-toggle" onclick="return toggle('funfusion.construct');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion.funfusion-class.html#construct">construct</a><tt class="py-op">(</tt><tt class="py-param">filename</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="funfusion.construct-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="funfusion.construct-expanded"><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-string">"To be implemented"</tt> </tt>
+</div><a name="funfusion.__str__"></a><div id="funfusion.__str__-def"><a name="L39"></a><tt class="py-lineno"> 39</tt> <a class="py-toggle" href="#" id="funfusion.__str__-toggle" onclick="return toggle('funfusion.__str__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion.funfusion-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="funfusion.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="funfusion.__str__-expanded"><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">                <tt class="py-name">string</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name"><a title="fusion.funfusion.fusedcall" class="py-name" href="#" onclick="return doclink('link-40', 'fusedcall', 'link-30');">fusedcall</a></tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Method function.function.__str__()=function.function-class.html#__str__,Method function.functionCall.__str__()=function.functionCall-class.html#__str__,Method fusion.funfusion.__str__()=fusion.funfusion-class.html#__str__,Method fusion.fusionNode.__str__()=fusion.fusionNode-class.html#__str__,Method kernel.kernel.__str__()=kernel.kernel-class.html#__str__,Method kernelInvocation.KernelInvocation.__str__()=kernelInvocation.KernelInvocation-class.html#__str__,Method statements.Statement.__str__()=statements.Statement-class.html#__str__,Method tokens.dirtyToken.__str__()=tokens.dirtyToken-class.html#__str__"><a title="function.function.__str__
+function.functionCall.__str__
+fusion.funfusion.__str__
+fusion.fusionNode.__str__
+kernel.kernel.__str__
+kernelInvocation.KernelInvocation.__str__
+statements.Statement.__str__
+tokens.dirtyToken.__str__" class="py-name" href="#" onclick="return doclink('link-41', '__str__', 'link-41');">__str__</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">                <tt class="py-comment">#for fun in self.funs:</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">                <tt class="py-comment">#       string += "\t" + fun.__str__()</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">string</tt>    </tt>
+</div></div><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="fusionTree"></a><div id="fusionTree-def"><a name="L45"></a><tt class="py-lineno"> 45</tt> <a class="py-toggle" href="#" id="fusionTree-toggle" onclick="return toggle('fusionTree');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="fusion.fusionTree-class.html">fusionTree</a><tt class="py-op">:</tt> </tt>
+</div><div id="fusionTree-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="fusionTree-expanded"><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-docstring">"""Fusion tree class contains a fusion node, which is the root of the tree.  It can be continually assigned nodes which are added in reverse order of execution.</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">                Tree then compacts to produce fusion.  It will attempt to compact until it just can't anymore.  In the event  it ends with two nodes in the tree, this is a failure.</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">                """</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt id="link-42" class="py-name" targets="Variable fusion.fusionTree.node=fusion.fusionTree-class.html#node"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-42', 'node', 'link-42');">node</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-string">"""Node"""</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt id="link-43" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-43', 'calls', 'link-2');">calls</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-string">"""fusion kernel calls"""</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt id="link-44" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-44', 'type', 'link-4');">type</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-string">"""type, vertical fusion is assumed"""</tt> </tt>
+<a name="fusionTree.__init__"></a><div id="fusionTree.__init__-def"><a name="L56"></a><tt class="py-lineno"> 56</tt> <a class="py-toggle" href="#" id="fusionTree.__init__-toggle" onclick="return toggle('fusionTree.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion.fusionTree-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">calls</tt><tt class="py-op">,</tt><tt class="py-param">type</tt><tt class="py-op">=</tt><tt class="py-string">'VERTICAL'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fusionTree.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="fusionTree.__init__-expanded"><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-45', 'type', 'link-4');">type</a></tt> <tt class="py-op">=</tt> <tt id="link-46" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-46', 'type', 'link-4');">type</a></tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-47', 'calls', 'link-2');">calls</a></tt> <tt class="py-op">=</tt> <tt id="link-48" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-48', 'calls', 'link-2');">calls</a></tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-49', 'node', 'link-42');">node</a></tt> <tt class="py-op">=</tt> <tt id="link-50" class="py-name" targets="Class fusion.fusionNode=fusion.fusionNode-class.html"><a title="fusion.fusionNode" class="py-name" href="#" onclick="return doclink('link-50', 'fusionNode', 'link-50');">fusionNode</a></tt><tt class="py-op">(</tt><tt id="link-51" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-51', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt>        </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-string">"Type: "</tt><tt class="py-op">,</tt> <tt id="link-52" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-52', 'type', 'link-4');">type</a></tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt id="link-53" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-53', 'call', 'link-5');">call</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-54', 'calls', 'link-2');">calls</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">                        <tt class="py-keyword">print</tt> <tt class="py-string">"call: "</tt><tt class="py-op">,</tt> <tt id="link-55" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-55', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-56" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-56', 'ID', 'link-14');">ID</a></tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-57', 'value', 'link-3');">value</a></tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">                        <tt class="py-keyword">print</tt> <tt class="py-string">"\tInputs:"</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">                        <tt class="py-keyword">for</tt> <tt class="py-name">val</tt> <tt class="py-keyword">in</tt> <tt id="link-58" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-58', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-59" class="py-name" targets="Method kernel.kernel.getInputs()=kernel.kernel-class.html#getInputs"><a title="kernel.kernel.getInputs" class="py-name" href="#" onclick="return doclink('link-59', 'getInputs', 'link-59');">getInputs</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">                                <tt class="py-keyword">print</tt> <tt class="py-string">"\t\t"</tt><tt class="py-op">,</tt><tt class="py-name">val</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-60', 'value', 'link-3');">value</a></tt><tt class="py-op">,</tt><tt class="py-string">"("</tt><tt class="py-op">,</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">                                <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-name">val</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name" targets="Variable fusion.fusionNode.parents=fusion.fusionNode-class.html#parents,Variable tokens.dirtyToken.parents=tokens.dirtyToken-class.html#parents"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-61', 'parents', 'link-61');">parents</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">                                        <tt class="py-keyword">print</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-62', 'value', 'link-3');">value</a></tt><tt class="py-op">,</tt> <tt class="py-string">","</tt> <tt class="py-op">,</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">                                <tt class="py-keyword">print</tt> <tt class="py-string">")"</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">                        <tt class="py-keyword">print</tt> <tt class="py-string">"\tOutputs:"</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">                        <tt class="py-keyword">for</tt> <tt class="py-name">val</tt> <tt class="py-keyword">in</tt> <tt id="link-63" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-63', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-64" class="py-name" targets="Method kernel.kernel.getOutputs()=kernel.kernel-class.html#getOutputs"><a title="kernel.kernel.getOutputs" class="py-name" href="#" onclick="return doclink('link-64', 'getOutputs', 'link-64');">getOutputs</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">                                <tt class="py-keyword">print</tt> <tt class="py-string">"\t\t"</tt><tt class="py-op">,</tt><tt class="py-name">val</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-65', 'value', 'link-3');">value</a></tt><tt class="py-op">,</tt><tt class="py-string">"("</tt><tt class="py-op">,</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">                                <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-name">val</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-66', 'parents', 'link-61');">parents</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">                                        <tt class="py-keyword">print</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-67', 'value', 'link-3');">value</a></tt><tt class="py-op">,</tt> <tt class="py-string">","</tt> <tt class="py-op">,</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                                <tt class="py-keyword">print</tt> <tt class="py-string">")"</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt id="link-68" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-68', 'type', 'link-4');">type</a></tt> <tt class="py-op">==</tt> <tt class="py-string">'VERTICAL'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">                        <tt class="py-keyword">for</tt> <tt id="link-69" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-69', 'call', 'link-5');">call</a></tt> <tt class="py-keyword">in</tt> <tt id="link-70" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-70', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">2</tt><tt class="py-op">:</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-71', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-72" class="py-name" targets="Method fusion.fusionNode.addParent()=fusion.fusionNode-class.html#addParent,Method tokens.dirtyToken.addParent()=tokens.dirtyToken-class.html#addParent"><a title="fusion.fusionNode.addParent
+tokens.dirtyToken.addParent" class="py-name" href="#" onclick="return doclink('link-72', 'addParent', 'link-72');">addParent</a></tt><tt class="py-op">(</tt><tt id="link-73" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-73', 'call', 'link-5');">call</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-74" class="py-name" targets="Method fusion.fusionNode.compact()=fusion.fusionNode-class.html#compact,Method fusion.fusionTree.compact()=fusion.fusionTree-class.html#compact"><a title="fusion.fusionNode.compact
+fusion.fusionTree.compact" class="py-name" href="#" onclick="return doclink('link-74', 'compact', 'link-74');">compact</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                         </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                <tt class="py-keyword">elif</tt><tt class="py-op">(</tt><tt id="link-75" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-75', 'type', 'link-4');">type</a></tt> <tt class="py-op">==</tt> <tt class="py-string">'HORIZONTAL'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-76', 'node', 'link-42');">node</a></tt> <tt class="py-op">=</tt> <tt id="link-77" class="py-name"><a title="fusion.fusionNode" class="py-name" href="#" onclick="return doclink('link-77', 'fusionNode', 'link-50');">fusionNode</a></tt><tt class="py-op">(</tt><tt id="link-78" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-78', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt>         </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-79" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-79', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-80" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-80', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-81" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-81', 'args', 'link-17');">args</a></tt> <tt class="py-op">+=</tt> <tt id="link-82" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-82', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-83" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-83', 'args', 'link-17');">args</a></tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">                        <tt class="py-name">ifstate</tt> <tt class="py-op">=</tt> <tt id="link-84" class="py-name" targets="Class statements.Statement=statements.Statement-class.html"><a title="statements.Statement" class="py-name" href="#" onclick="return doclink('link-84', 'Statement', 'link-84');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-string">'IF'</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">                        <tt class="py-name">ifstate</tt><tt class="py-op">.</tt><tt id="link-85" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-85', 'children', 'link-28');">children</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">                        <tt class="py-name">state</tt> <tt class="py-op">=</tt> <tt id="link-86" class="py-name"><a title="statements.Statement" class="py-name" href="#" onclick="return doclink('link-86', 'Statement', 'link-84');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-string">'OTHER'</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">                        <tt class="py-name">state</tt><tt class="py-op">.</tt><tt id="link-87" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-87', 'tokens', 'link-0');">tokens</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">                        <tt class="py-name">state</tt><tt class="py-op">.</tt><tt id="link-88" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-88', 'tokens', 'link-0');">tokens</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-89" class="py-name" targets="Function tokens.makeToken()=tokens-module.html#makeToken"><a title="tokens.makeToken" class="py-name" href="#" onclick="return doclink('link-89', 'makeToken', 'link-89');">makeToken</a></tt><tt class="py-op">(</tt><tt class="py-string">'get_global_id(0)'</tt><tt class="py-op">,</tt><tt class="py-string">'ID'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                        <tt class="py-name">state</tt><tt class="py-op">.</tt><tt id="link-90" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-90', 'tokens', 'link-0');">tokens</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-91" class="py-name"><a title="tokens.makeToken" class="py-name" href="#" onclick="return doclink('link-91', 'makeToken', 'link-89');">makeToken</a></tt><tt class="py-op">(</tt><tt class="py-string">'&lt;'</tt><tt class="py-op">,</tt><tt class="py-string">'LESSTHAN'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">                        <tt class="py-name">state</tt><tt class="py-op">.</tt><tt id="link-92" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-92', 'tokens', 'link-0');">tokens</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-93" class="py-name"><a title="tokens.makeToken" class="py-name" href="#" onclick="return doclink('link-93', 'makeToken', 'link-89');">makeToken</a></tt><tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-94" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-94', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-95" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-95', 'args', 'link-17');">args</a></tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-96" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-96', 'value', 'link-3');">value</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-string">"ID"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                        <tt class="py-name">ifstate</tt><tt class="py-op">.</tt><tt id="link-97" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-97', 'children', 'link-28');">children</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">state</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                        <tt class="py-name">ifstate</tt><tt class="py-op">.</tt><tt id="link-98" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-98', 'children', 'link-28');">children</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-99" class="py-name"><a title="statements.Statement" class="py-name" href="#" onclick="return doclink('link-99', 'Statement', 'link-84');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-string">'SCOPE'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                        <tt class="py-name">ifstate</tt><tt class="py-op">.</tt><tt id="link-100" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-100', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-101" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-101', 'children', 'link-28');">children</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                        <tt class="py-name">ifstate</tt><tt class="py-op">.</tt><tt id="link-102" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-102', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-103" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-103', 'children', 'link-28');">children</a></tt> <tt class="py-op">+=</tt> <tt id="link-104" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-104', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-105" class="py-name" targets="Variable kernel.kernel.loads=kernel.kernel-class.html#loads"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-105', 'loads', 'link-105');">loads</a></tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                        <tt class="py-name">ifstate</tt><tt class="py-op">.</tt><tt id="link-106" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-106', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-107" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-107', 'children', 'link-28');">children</a></tt> <tt class="py-op">+=</tt> <tt id="link-108" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-108', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-109" class="py-name" targets="Variable kernel.kernel.statements=kernel.kernel-class.html#statements,Module statements=statements-module.html"><a title="kernel.kernel.statements
+statements" class="py-name" href="#" onclick="return doclink('link-109', 'statements', 'link-109');">statements</a></tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                        <tt class="py-name">ifstate</tt><tt class="py-op">.</tt><tt id="link-110" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-110', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-111" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-111', 'children', 'link-28');">children</a></tt> <tt class="py-op">+=</tt> <tt id="link-112" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-112', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-113" class="py-name" targets="Variable kernel.kernel.stores=kernel.kernel-class.html#stores"><a title="kernel.kernel.stores" class="py-name" href="#" onclick="return doclink('link-113', 'stores', 'link-113');">stores</a></tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-114" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-114', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-115" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-115', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-116" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-116', 'loads', 'link-105');">loads</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-117" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-117', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-118" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-118', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-119" class="py-name"><a title="kernel.kernel.stores" class="py-name" href="#" onclick="return doclink('link-119', 'stores', 'link-113');">stores</a></tt><tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-120" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-120', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-121" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-121', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-122" class="py-name"><a title="kernel.kernel.statements
+statements" class="py-name" href="#" onclick="return doclink('link-122', 'statements', 'link-109');">statements</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">ifstate</tt><tt class="py-op">]</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">                        <tt class="py-name">elsestate</tt> <tt class="py-op">=</tt> <tt id="link-123" class="py-name"><a title="statements.Statement" class="py-name" href="#" onclick="return doclink('link-123', 'Statement', 'link-84');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-string">'ELSE'</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">                        <tt class="py-name">elsestate</tt><tt class="py-op">.</tt><tt id="link-124" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-124', 'children', 'link-28');">children</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-125" class="py-name"><a title="statements.Statement" class="py-name" href="#" onclick="return doclink('link-125', 'Statement', 'link-84');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-string">'SCOPE'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                        <tt class="py-name">elsestate</tt><tt class="py-op">.</tt><tt id="link-126" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-126', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-127" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-127', 'children', 'link-28');">children</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">                        <tt class="py-name">elsestate</tt><tt class="py-op">.</tt><tt id="link-128" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-128', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-129" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-129', 'children', 'link-28');">children</a></tt> <tt class="py-op">+=</tt> <tt id="link-130" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-130', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-131" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-131', 'loads', 'link-105');">loads</a></tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">                        <tt class="py-name">elsestate</tt><tt class="py-op">.</tt><tt id="link-132" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-132', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-133" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-133', 'children', 'link-28');">children</a></tt> <tt class="py-op">+=</tt> <tt id="link-134" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-134', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-135" class="py-name"><a title="kernel.kernel.statements
+statements" class="py-name" href="#" onclick="return doclink('link-135', 'statements', 'link-109');">statements</a></tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">                        <tt class="py-name">elsestate</tt><tt class="py-op">.</tt><tt id="link-136" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-136', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-137" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-137', 'children', 'link-28');">children</a></tt> <tt class="py-op">+=</tt> <tt id="link-138" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-138', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-139" class="py-name"><a title="kernel.kernel.stores" class="py-name" href="#" onclick="return doclink('link-139', 'stores', 'link-113');">stores</a></tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-140" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-140', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-141" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-141', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-142" class="py-name"><a title="kernel.kernel.statements
+statements" class="py-name" href="#" onclick="return doclink('link-142', 'statements', 'link-109');">statements</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">elsestate</tt><tt class="py-op">)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-143" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-143', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-144" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-144', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-145" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-145', 'ID', 'link-14');">ID</a></tt><tt class="py-op">.</tt><tt id="link-146" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-146', 'value', 'link-3');">value</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-147" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-147', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-148" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-148', 'ID', 'link-14');">ID</a></tt><tt class="py-op">.</tt><tt id="link-149" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-149', 'value', 'link-3');">value</a></tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-150" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-150', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-151" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-151', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-152" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-152', 'ID', 'link-14');">ID</a></tt><tt class="py-op">.</tt><tt id="link-153" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-153', 'value', 'link-3');">value</a></tt> <tt class="py-op">+=</tt> <tt class="py-string">"_"</tt> <tt class="py-op">+</tt> <tt id="link-154" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-154', 'calls', 'link-2');">calls</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-155" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-155', 'ID', 'link-14');">ID</a></tt><tt class="py-op">.</tt><tt id="link-156" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-156', 'value', 'link-3');">value</a></tt> <tt class="py-op">+</tt> <tt class="py-string">"_h"</tt>        </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">                        <tt class="py-name">ifstate</tt><tt class="py-op">.</tt><tt id="link-157" class="py-name" targets="Method statements.Statement.replace()=statements.Statement-class.html#replace"><a title="statements.Statement.replace" class="py-name" href="#" onclick="return doclink('link-157', 'replace', 'link-157');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"get_global_size"</tt><tt class="py-op">,</tt><tt class="py-string">"-newSize + get_global_size"</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                        <tt class="py-name">elsestate</tt><tt class="py-op">.</tt><tt id="link-158" class="py-name"><a title="statements.Statement.replace" class="py-name" href="#" onclick="return doclink('link-158', 'replace', 'link-157');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"get_global_size"</tt><tt class="py-op">,</tt><tt class="py-string">"-newSize + get_global_size"</tt><tt class="py-op">)</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">                        <tt class="py-name">elsestate</tt><tt class="py-op">.</tt><tt id="link-159" class="py-name"><a title="statements.Statement.replace" class="py-name" href="#" onclick="return doclink('link-159', 'replace', 'link-157');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"get_global_id"</tt><tt class="py-op">,</tt><tt class="py-string">"-newSize + get_global_id"</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-160" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-160', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-161" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-161', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-162" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-162', 'args', 'link-17');">args</a></tt> <tt class="py-op">=</tt> <tt id="link-163" class="py-name" targets="Function tokens.removeDuplicates3()=tokens-module.html#removeDuplicates3"><a title="tokens.removeDuplicates3" class="py-name" href="#" onclick="return doclink('link-163', 'removeDuplicates3', 'link-163');">removeDuplicates3</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-164" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-164', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-165" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-165', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-166" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-166', 'args', 'link-17');">args</a></tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">;</tt> </tt>
+</div><a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                         </tt>
+<a name="fusionTree.compact"></a><div id="fusionTree.compact-def"><a name="L113"></a><tt class="py-lineno">113</tt> <a class="py-toggle" href="#" id="fusionTree.compact-toggle" onclick="return toggle('fusionTree.compact');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion.fusionTree-class.html#compact">compact</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fusionTree.compact-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="fusionTree.compact-expanded"><a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-167" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-167', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-168" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-168', 'ID', 'link-14');">ID</a></tt><tt class="py-op">.</tt><tt id="link-169" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-169', 'value', 'link-3');">value</a></tt>  <tt class="py-op">=</tt> <tt class="py-string">""</tt><tt class="py-comment">#self.calls[0].ID.value +  "_" </tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-170" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-170', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-171" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-171', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-172" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-172', 'args', 'link-17');">args</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt>         </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-173" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-173', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-174" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-174', 'call', 'link-5');">call</a></tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt id="link-175" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-175', 'call', 'link-5');">call</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-176" class="py-name"><a title="fusion.fusionTree.calls" class="py-name" href="#" onclick="return doclink('link-176', 'calls', 'link-2');">calls</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-177" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-177', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-178" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-178', 'ID', 'link-14');">ID</a></tt><tt class="py-op">.</tt><tt id="link-179" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-179', 'value', 'link-3');">value</a></tt> <tt class="py-op">+=</tt> <tt id="link-180" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-180', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-181" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-181', 'ID', 'link-14');">ID</a></tt><tt class="py-op">.</tt><tt id="link-182" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-182', 'value', 'link-3');">value</a></tt> <tt class="py-op">+</tt> <tt class="py-string">"_"</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-183" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-183', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-184" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-184', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-185" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-185', 'args', 'link-17');">args</a></tt> <tt class="py-op">+=</tt> <tt id="link-186" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-186', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-187" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-187', 'args', 'link-17');">args</a></tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">                <tt class="py-keyword">while</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-188" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-188', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-189" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-189', 'parents', 'link-61');">parents</a></tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">                        <tt class="py-keyword">print</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-190" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-190', 'node', 'link-42');">node</a></tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                        <tt class="py-keyword">print</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-191" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-191', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-192" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-192', 'call', 'link-5');">call</a></tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-keyword">not</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-193" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-193', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-194" class="py-name"><a title="fusion.fusionNode.compact
+fusion.fusionTree.compact" class="py-name" href="#" onclick="return doclink('link-194', 'compact', 'link-74');">compact</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">                                <tt class="py-keyword">print</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-195" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-195', 'node', 'link-42');">node</a></tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">                                <tt class="py-keyword">return</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-196" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-196', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-197" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-197', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-198" class="py-name" targets="Method kernel.kernel.clean()=kernel.kernel-class.html#clean"><a title="kernel.kernel.clean" class="py-name" href="#" onclick="return doclink('link-198', 'clean', 'link-198');">clean</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt>                   </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-199" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-199', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-200" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-200', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-201" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-201', 'ID', 'link-14');">ID</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-202" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-202', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-203" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-203', 'ID', 'link-14');">ID</a></tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-204" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-204', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-205" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-205', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-206" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-206', 'args', 'link-17');">args</a></tt> <tt class="py-op">=</tt> <tt id="link-207" class="py-name"><a title="tokens.removeDuplicates3" class="py-name" href="#" onclick="return doclink('link-207', 'removeDuplicates3', 'link-163');">removeDuplicates3</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-208" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-208', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-209" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-209', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-210" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-210', 'args', 'link-17');">args</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-211" class="py-name"><a title="fusion.fusionTree.node" class="py-name" href="#" onclick="return doclink('link-211', 'node', 'link-42');">node</a></tt><tt class="py-op">.</tt><tt id="link-212" class="py-name" targets="Method fusion.fusionNode.reorder()=fusion.fusionNode-class.html#reorder"><a title="fusion.fusionNode.reorder" class="py-name" href="#" onclick="return doclink('link-212', 'reorder', 'link-212');">reorder</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="fusionNode"></a><div id="fusionNode-def"><a name="L132"></a><tt class="py-lineno">132</tt> <a class="py-toggle" href="#" id="fusionNode-toggle" onclick="return toggle('fusionNode');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="fusion.fusionNode-class.html">fusionNode</a><tt class="py-op">:</tt> </tt>
+</div><div id="fusionNode-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="fusionNode-expanded"><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-docstring">"""Fusion node class.  It allows us to build a tree and then compact it.  It is built and destroyed from the bottom up"""</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">        <tt id="link-213" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-213', 'parents', 'link-61');">parents</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-string">"""[Statement]:Parent is a node who's output matches this nodes inputs.  Nodes are added only if dependency is not already filled.  In the case where a dependency is filled, we pass the new node onto the correct parent"""</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt id="link-214" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-214', 'call', 'link-5');">call</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">        <tt class="py-string">"""[Statment]:kernel which is called"""</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt id="link-215" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-215', 'args', 'link-17');">args</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-string">"""[Statement]:kernel arguments"""</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt id="link-216" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-216', 'ID', 'link-14');">ID</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-string">"""[dirtyToken]: identifiers for various kernels"""</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">        <tt id="link-217" class="py-name" targets="Variable fusion.fusionNode.kernelinvocation=fusion.fusionNode-class.html#kernelinvocation"><a title="fusion.fusionNode.kernelinvocation" class="py-name" href="#" onclick="return doclink('link-217', 'kernelinvocation', 'link-217');">kernelinvocation</a></tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-string">"""kernelInvocation: out kernel invocation"""</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt id="link-218" class="py-name" targets="Variable fusion.fusionNode.kernel=fusion.fusionNode-class.html#kernel,Module kernel=kernel-module.html,Class kernel.kernel=kernel.kernel-class.html,Variable kernelInvocation.KernelInvocation.kernel=kernelInvocation.KernelInvocation-class.html#kernel"><a title="fusion.fusionNode.kernel
+kernel
+kernel.kernel
+kernelInvocation.KernelInvocation.kernel" class="py-name" href="#" onclick="return doclink('link-218', 'kernel', 'link-218');">kernel</a></tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-string">"""string: our kernel name updated as we contract"""</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">        <tt id="link-219" class="py-name"><a title="function
+function.function
+fusion.fusionNode.function" class="py-name" href="#" onclick="return doclink('link-219', 'function', 'link-1');">function</a></tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-string">"""not used"""</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">        <tt id="link-220" class="py-name" targets="Variable fusion.fusionNode.used=fusion.fusionNode-class.html#used"><a title="fusion.fusionNode.used" class="py-name" href="#" onclick="return doclink('link-220', 'used', 'link-220');">used</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-string">"""collection of dependency in the OpenCL kernel which have been satisfied via compacting"""</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">        <tt id="link-221" class="py-name" targets="Variable fusion.fusionNode.inputs=fusion.fusionNode-class.html#inputs"><a title="fusion.fusionNode.inputs" class="py-name" href="#" onclick="return doclink('link-221', 'inputs', 'link-221');">inputs</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt class="py-string">""" This kernels inputs"""</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt id="link-222" class="py-name" targets="Variable fusion.fusionNode.outputs=fusion.fusionNode-class.html#outputs"><a title="fusion.fusionNode.outputs" class="py-name" href="#" onclick="return doclink('link-222', 'outputs', 'link-222');">outputs</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-string">""" this kernels outputs"""</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt id="link-223" class="py-name" targets="Variable fusion.fusionNode.level=fusion.fusionNode-class.html#level,Variable statements.Statement.level=statements.Statement-class.html#level"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-223', 'level', 'link-223');">level</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-string">"""indententation for when we output the tree to screen"""</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">         </tt>
+<a name="fusionNode.__init__"></a><div id="fusionNode.__init__-def"><a name="L157"></a><tt class="py-lineno">157</tt> <a class="py-toggle" href="#" id="fusionNode.__init__-toggle" onclick="return toggle('fusionNode.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion.fusionNode-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">call</tt><tt class="py-op">,</tt> <tt class="py-param">level</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fusionNode.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="fusionNode.__init__-expanded"><a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">                <tt class="py-docstring">"""kernel call is input and relevant information is extracted to build node"""</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-224" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-224', 'level', 'link-223');">level</a></tt> <tt class="py-op">=</tt> <tt id="link-225" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-225', 'level', 'link-223');">level</a></tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-226" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-226', 'ID', 'link-14');">ID</a></tt> <tt class="py-op">=</tt> <tt class="py-name">copy</tt><tt class="py-op">.</tt><tt class="py-name">deepcopy</tt><tt class="py-op">(</tt><tt id="link-227" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-227', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-228" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-228', 'ID', 'link-14');">ID</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-229" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-229', 'call', 'link-5');">call</a></tt> <tt class="py-op">=</tt> <tt class="py-name">copy</tt><tt class="py-op">.</tt><tt class="py-name">deepcopy</tt><tt class="py-op">(</tt><tt id="link-230" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-230', 'call', 'link-5');">call</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-231" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-231', 'args', 'link-17');">args</a></tt> <tt class="py-op">=</tt> <tt class="py-name">copy</tt><tt class="py-op">.</tt><tt class="py-name">deepcopy</tt><tt class="py-op">(</tt><tt id="link-232" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-232', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-233" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-233', 'args', 'link-17');">args</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">statement</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-234" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-234', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-235" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-235', 'loads', 'link-105');">loads</a></tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-236" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-236', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-237" class="py-name"><a title="kernel.kernel.statements
+statements" class="py-name" href="#" onclick="return doclink('link-237', 'statements', 'link-109');">statements</a></tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-238" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-238', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-239" class="py-name"><a title="kernel.kernel.stores" class="py-name" href="#" onclick="return doclink('link-239', 'stores', 'link-113');">stores</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">                        <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-240" class="py-name" targets="Method statements.Statement.prefix()=statements.Statement-class.html#prefix"><a title="statements.Statement.prefix" class="py-name" href="#" onclick="return doclink('link-240', 'prefix', 'link-240');">prefix</a></tt><tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-241" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-241', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-242" class="py-name" targets="Variable kernel.kernel.cid=kernel.kernel-class.html#cid"><a title="kernel.kernel.cid" class="py-name" href="#" onclick="return doclink('link-242', 'cid', 'link-242');">cid</a></tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-243" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-243', 'level', 'link-223');">level</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-244" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-244', 'parents', 'link-61');">parents</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-245" class="py-name"><a title="fusion.fusionNode.inputs" class="py-name" href="#" onclick="return doclink('link-245', 'inputs', 'link-221');">inputs</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-246" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-246', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-247" class="py-name"><a title="kernel.kernel.getInputs" class="py-name" href="#" onclick="return doclink('link-247', 'getInputs', 'link-59');">getInputs</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-248" class="py-name"><a title="fusion.fusionNode.outputs" class="py-name" href="#" onclick="return doclink('link-248', 'outputs', 'link-222');">outputs</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-249" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-249', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-250" class="py-name"><a title="kernel.kernel.getOutputs" class="py-name" href="#" onclick="return doclink('link-250', 'getOutputs', 'link-64');">getOutputs</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="fusionNode.addParent"></a><div id="fusionNode.addParent-def"><a name="L168"></a><tt class="py-lineno">168</tt> <a class="py-toggle" href="#" id="fusionNode.addParent-toggle" onclick="return toggle('fusionNode.addParent');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion.fusionNode-class.html#addParent">addParent</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">call</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fusionNode.addParent-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="fusionNode.addParent-expanded"><a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">                <tt class="py-docstring">"""call is input,"""</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-251" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-251', 'parents', 'link-61');">parents</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-252" class="py-name"><a title="fusion.fusionNode.addParent
+tokens.dirtyToken.addParent" class="py-name" href="#" onclick="return doclink('link-252', 'addParent', 'link-72');">addParent</a></tt><tt class="py-op">(</tt><tt id="link-253" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-253', 'call', 'link-5');">call</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">                                <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">                <tt class="py-name">match</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">                <tt id="link-254" class="py-name"><a title="fusion.fusionNode.outputs" class="py-name" href="#" onclick="return doclink('link-254', 'outputs', 'link-222');">outputs</a></tt> <tt class="py-op">=</tt> <tt id="link-255" class="py-name"><a title="fusion.fusionNode" class="py-name" href="#" onclick="return doclink('link-255', 'fusionNode', 'link-50');">fusionNode</a></tt><tt class="py-op">(</tt><tt id="link-256" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-256', 'call', 'link-5');">call</a></tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-257" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-257', 'level', 'link-223');">level</a></tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-258" class="py-name"><a title="fusion.fusionNode.outputs" class="py-name" href="#" onclick="return doclink('link-258', 'outputs', 'link-222');">outputs</a></tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">                <tt class="py-comment">#print self.level*"\t"+"Adding to", self.ID.value</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">input</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-259" class="py-name"><a title="fusion.fusionNode.inputs" class="py-name" href="#" onclick="return doclink('link-259', 'inputs', 'link-221');">inputs</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">                        <tt class="py-keyword">for</tt> <tt id="link-260" class="py-name" targets="Method statements.Statement.output()=statements.Statement-class.html#output"><a title="statements.Statement.output" class="py-name" href="#" onclick="return doclink('link-260', 'output', 'link-260');">output</a></tt> <tt class="py-keyword">in</tt> <tt id="link-261" class="py-name"><a title="fusion.fusionNode.outputs" class="py-name" href="#" onclick="return doclink('link-261', 'outputs', 'link-222');">outputs</a></tt><tt class="py-op">:</tt>                   </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">                                <tt class="py-keyword">for</tt> <tt class="py-name">p1</tt> <tt class="py-keyword">in</tt> <tt class="py-name">input</tt><tt class="py-op">.</tt><tt id="link-262" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-262', 'parents', 'link-61');">parents</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">                                        <tt class="py-keyword">for</tt> <tt class="py-name">p2</tt> <tt class="py-keyword">in</tt> <tt id="link-263" class="py-name"><a title="statements.Statement.output" class="py-name" href="#" onclick="return doclink('link-263', 'output', 'link-260');">output</a></tt><tt class="py-op">.</tt><tt id="link-264" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-264', 'parents', 'link-61');">parents</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">                                                <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">p1</tt> <tt class="py-op">==</tt> <tt class="py-name">p2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">                                                        <tt class="py-name">match</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">                                                        <tt class="py-comment">#print "\tmatch:",output,"==",input</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">                                                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">                                                        <tt class="py-keyword">pass</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">                                                        <tt class="py-comment">#print "failed:",output,"!=",input</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">match</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-265" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-265', 'parents', 'link-61');">parents</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-266" class="py-name"><a title="fusion.fusionNode" class="py-name" href="#" onclick="return doclink('link-266', 'fusionNode', 'link-50');">fusionNode</a></tt><tt class="py-op">(</tt><tt id="link-267" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-267', 'call', 'link-5');">call</a></tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-268" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-268', 'level', 'link-223');">level</a></tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">                        <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">                <tt class="py-keyword">elif</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-269" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-269', 'level', 'link-223');">level</a></tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">                        <tt class="py-keyword">print</tt> <tt class="py-string">"failed to find matching parent cannot build tree.  Kernels Independent.  Will attempt to merge kernels"</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">                        <tt class="py-name">tmp</tt> <tt class="py-op">=</tt> <tt id="link-270" class="py-name"><a title="fusion.fusionNode" class="py-name" href="#" onclick="return doclink('link-270', 'fusionNode', 'link-50');">fusionNode</a></tt><tt class="py-op">(</tt><tt id="link-271" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-271', 'call', 'link-5');">call</a></tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-272" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-272', 'level', 'link-223');">level</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-273" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-273', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-274" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-274', 'loads', 'link-105');">loads</a></tt> <tt class="py-op">+=</tt> <tt class="py-name">tmp</tt><tt class="py-op">.</tt><tt id="link-275" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-275', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-276" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-276', 'loads', 'link-105');">loads</a></tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-277" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-277', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-278" class="py-name"><a title="kernel.kernel.stores" class="py-name" href="#" onclick="return doclink('link-278', 'stores', 'link-113');">stores</a></tt> <tt class="py-op">+=</tt> <tt class="py-name">tmp</tt><tt class="py-op">.</tt><tt id="link-279" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-279', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-280" class="py-name"><a title="kernel.kernel.stores" class="py-name" href="#" onclick="return doclink('link-280', 'stores', 'link-113');">stores</a></tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-281" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-281', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-282" class="py-name"><a title="kernel.kernel.statements
+statements" class="py-name" href="#" onclick="return doclink('link-282', 'statements', 'link-109');">statements</a></tt> <tt class="py-op">+=</tt> <tt class="py-name">tmp</tt><tt class="py-op">.</tt><tt id="link-283" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-283', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-284" class="py-name"><a title="kernel.kernel.statements
+statements" class="py-name" href="#" onclick="return doclink('link-284', 'statements', 'link-109');">statements</a></tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-285" class="py-name"><a title="fusion.fusionNode.inputs" class="py-name" href="#" onclick="return doclink('link-285', 'inputs', 'link-221');">inputs</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-286" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-286', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-287" class="py-name"><a title="kernel.kernel.getInputs" class="py-name" href="#" onclick="return doclink('link-287', 'getInputs', 'link-59');">getInputs</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-288" class="py-name"><a title="fusion.fusionNode.outputs" class="py-name" href="#" onclick="return doclink('link-288', 'outputs', 'link-222');">outputs</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-289" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-289', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-290" class="py-name"><a title="kernel.kernel.getOutputs" class="py-name" href="#" onclick="return doclink('link-290', 'getOutputs', 'link-64');">getOutputs</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt>    </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">                        <tt class="py-keyword">return</tt> <tt class="py-name">True</tt>              </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">                        <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+</div><a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">         </tt>
+<a name="fusionNode.cullRedeclarations"></a><div id="fusionNode.cullRedeclarations-def"><a name="L202"></a><tt class="py-lineno">202</tt> <a class="py-toggle" href="#" id="fusionNode.cullRedeclarations-toggle" onclick="return toggle('fusionNode.cullRedeclarations');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion.fusionNode-class.html#cullRedeclarations">cullRedeclarations</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fusionNode.cullRedeclarations-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="fusionNode.cullRedeclarations-expanded"><a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">                <tt class="py-name">decs</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">s1</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-291" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-291', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-292" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-292', 'loads', 'link-105');">loads</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">s1</tt><tt class="py-op">.</tt><tt id="link-293" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-293', 'type', 'link-4');">type</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">[</tt><tt class="py-string">'DECLARATION'</tt><tt class="py-op">,</tt><tt class="py-string">'DECLARATIONASSIGMENT'</tt><tt class="py-op">,</tt><tt class="py-string">'ALTEREDDECLARATIONASSIGMENT'</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">                                <tt class="py-name">dec</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">s1</tt><tt class="py-op">.</tt><tt id="link-294" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-294', 'tokens', 'link-0');">tokens</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-295" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-295', 'value', 'link-3');">value</a></tt><tt class="py-op">,</tt> <tt class="py-name">s1</tt><tt class="py-op">.</tt><tt id="link-296" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-296', 'tokens', 'link-0');">tokens</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-297" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-297', 'value', 'link-3');">value</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">                                <tt class="py-keyword">if</tt> <tt class="py-name">dec</tt> <tt class="py-keyword">in</tt> <tt class="py-name">decs</tt><tt class="py-op">:</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">                                        <tt class="py-name">s1</tt><tt class="py-op">.</tt><tt id="link-298" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-298', 'tokens', 'link-0');">tokens</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-299" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-299', 'value', 'link-3');">value</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"/*REDACTED*/"</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">                                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">                                        <tt class="py-name">decs</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">dec</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">         </tt>
+<a name="fusionNode.compact"></a><div id="fusionNode.compact-def"><a name="L212"></a><tt class="py-lineno">212</tt> <a class="py-toggle" href="#" id="fusionNode.compact-toggle" onclick="return toggle('fusionNode.compact');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion.fusionNode-class.html#compact">compact</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fusionNode.compact-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="fusionNode.compact-expanded"><a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">                <tt class="py-docstring">"""Compact this node by conrtacting one of its parents.</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"><tt class="py-docstring">                        This function searches though all parents.  If a given parent satisfies one of its dependencies, it's source code is used to replace the given load function.  Scope is used to prevent similar variables destroying each other</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"><tt class="py-docstring">                        """</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-300" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-300', 'parents', 'link-61');">parents</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">                        <tt class="py-name">compacted</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt>                </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">                        <tt class="py-keyword">for</tt> <tt id="link-301" class="py-name"><a title="statements.Statement.output" class="py-name" href="#" onclick="return doclink('link-301', 'output', 'link-260');">output</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-302" class="py-name"><a title="fusion.fusionNode.outputs" class="py-name" href="#" onclick="return doclink('link-302', 'outputs', 'link-222');">outputs</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">                                <tt class="py-keyword">for</tt> <tt class="py-name">statement</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-303" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-303', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-304" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-304', 'loads', 'link-105');">loads</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">                                        <tt class="py-comment">#print "matching statment:", statement  </tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">                                        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-305" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-305', 'type', 'link-4');">type</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">[</tt><tt class="py-string">"ASSIGMENT"</tt><tt class="py-op">,</tt><tt class="py-string">"DECLARATIONASSIGMENT"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">                                                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-306" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-306', 'children', 'link-28');">children</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">                                                        <tt class="py-name">child</tt> <tt class="py-op">=</tt> <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-307" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-307', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">                                                        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">child</tt><tt class="py-op">.</tt><tt id="link-308" class="py-name" targets="Method statements.Statement.search()=statements.Statement-class.html#search"><a title="statements.Statement.search" class="py-name" href="#" onclick="return doclink('link-308', 'search', 'link-308');">search</a></tt><tt class="py-op">(</tt><tt class="py-string">"read_imagef"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">                                                                <tt class="py-name">DID</tt> <tt class="py-op">=</tt> <tt class="py-name">child</tt><tt class="py-op">.</tt><tt id="link-309" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-309', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-310" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-310', 'tokens', 'link-0');">tokens</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">                                                                <tt class="py-keyword">if</tt> <tt class="py-name">DID</tt><tt class="py-op">.</tt><tt id="link-311" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-311', 'parents', 'link-61');">parents</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-keyword">in</tt> <tt id="link-312" class="py-name"><a title="statements.Statement.output" class="py-name" href="#" onclick="return doclink('link-312', 'output', 'link-260');">output</a></tt><tt class="py-op">.</tt><tt id="link-313" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-313', 'parents', 'link-61');">parents</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">                                                                        <tt class="py-name">compacted</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">                                                                        <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-314" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-314', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-315" class="py-name"><a title="statements.Statement" class="py-name" href="#" onclick="return doclink('link-315', 'Statement', 'link-84');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-name">child</tt><tt class="py-op">.</tt><tt id="link-316" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-316', 'level', 'link-223');">level</a></tt><tt class="py-op">,</tt><tt class="py-string">'ID'</tt><tt class="py-op">)</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">                                                                        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt id="link-317" class="py-name"><a title="statements.Statement.output" class="py-name" href="#" onclick="return doclink('link-317', 'output', 'link-260');">output</a></tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-318" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-318', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-319" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-319', 'tokens', 'link-0');">tokens</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">                                                                                <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-320" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-320', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-321" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-321', 'tokens', 'link-0');">tokens</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-322" class="py-name"><a title="statements.Statement.output" class="py-name" href="#" onclick="return doclink('link-322', 'output', 'link-260');">output</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">                                                                                <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-323" class="py-name" targets="Method statements.Statement.update()=statements.Statement-class.html#update,Method tokens.dirtyToken.update()=tokens.dirtyToken-class.html#update"><a title="statements.Statement.update
+tokens.dirtyToken.update" class="py-name" href="#" onclick="return doclink('link-323', 'update', 'link-323');">update</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">                                                                                <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-324" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-324', 'type', 'link-4');">type</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'ALTERED'</tt> <tt class="py-op">+</tt> <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-325" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-325', 'type', 'link-4');">type</a></tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">                                                        <tt class="py-keyword">elif</tt><tt class="py-op">(</tt><tt class="py-name">child</tt><tt class="py-op">.</tt><tt id="link-326" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-326', 'type', 'link-4');">type</a></tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-op">[</tt><tt class="py-string">'CALL'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">                                                                <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">child</tt><tt class="py-op">.</tt><tt id="link-327" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-327', 'tokens', 'link-0');">tokens</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-328" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-328', 'type', 'link-4');">type</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">[</tt><tt class="py-string">'DIRTY ID'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">                                                                        <tt class="py-name">DID</tt> <tt class="py-op">=</tt> <tt class="py-name">child</tt><tt class="py-op">.</tt><tt id="link-329" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-329', 'tokens', 'link-0');">tokens</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt>                                                                    </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">                                                                        <tt class="py-comment">#print "Checking for output for", DID.value ,i</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">                                                                        <tt class="py-keyword">if</tt> <tt class="py-name">DID</tt><tt class="py-op">.</tt><tt id="link-330" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-330', 'parents', 'link-61');">parents</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-keyword">in</tt> <tt id="link-331" class="py-name"><a title="statements.Statement.output" class="py-name" href="#" onclick="return doclink('link-331', 'output', 'link-260');">output</a></tt><tt class="py-op">.</tt><tt id="link-332" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-332', 'parents', 'link-61');">parents</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">                                                                                <tt class="py-comment">#print "found match in", output.value</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">                                                                                <tt class="py-name">compacted</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">                                                                                <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-333" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-333', 'children', 'link-28');">children</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt id="link-334" class="py-name"><a title="statements.Statement" class="py-name" href="#" onclick="return doclink('link-334', 'Statement', 'link-84');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-name">child</tt><tt class="py-op">.</tt><tt id="link-335" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-335', 'level', 'link-223');">level</a></tt><tt class="py-op">,</tt><tt class="py-string">'ID'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">                                                                                <tt class="py-name">tmp</tt> <tt class="py-op">=</tt> <tt class="py-name">copy</tt><tt class="py-op">.</tt><tt class="py-name">deepcopy</tt><tt class="py-op">(</tt><tt id="link-336" class="py-name"><a title="statements.Statement.output" class="py-name" href="#" onclick="return doclink('link-336', 'output', 'link-260');">output</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">                                                                                <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-337" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-337', 'children', 'link-28');">children</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-338" class="py-name"><a title="statements.Statement.tokens
+tokens
+tokens.tokens" class="py-name" href="#" onclick="return doclink('link-338', 'tokens', 'link-0');">tokens</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">tmp</tt><tt class="py-op">]</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">                                                                                <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-339" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-339', 'type', 'link-4');">type</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'ALTERED'</tt> <tt class="py-op">+</tt> <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-340" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-340', 'type', 'link-4');">type</a></tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">compacted</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>                   </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">                                <tt class="py-name">scope</tt> <tt class="py-op">=</tt> <tt id="link-341" class="py-name"><a title="statements.Statement" class="py-name" href="#" onclick="return doclink('link-341', 'Statement', 'link-84');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">,</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-string">'SCOPE'</tt><tt class="py-op">)</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">                                <tt class="py-name">scope</tt><tt class="py-op">.</tt><tt id="link-342" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-342', 'children', 'link-28');">children</a></tt> <tt class="py-op">=</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-343" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-343', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-344" class="py-name"><a title="kernel.kernel.statements
+statements" class="py-name" href="#" onclick="return doclink('link-344', 'statements', 'link-109');">statements</a></tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">                                <tt class="py-keyword">for</tt> <tt class="py-name">c</tt> <tt class="py-keyword">in</tt> <tt class="py-name">scope</tt><tt class="py-op">.</tt><tt id="link-345" class="py-name"><a title="function.functionCall.children
+statements.Statement.children" class="py-name" href="#" onclick="return doclink('link-345', 'children', 'link-28');">children</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">                                        <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-346" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-346', 'level', 'link-223');">level</a></tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-347" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-347', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-348" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-348', 'loads', 'link-105');">loads</a></tt> <tt class="py-op">=</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-349" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-349', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-350" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-350', 'loads', 'link-105');">loads</a></tt> <tt class="py-op">+</tt> <tt class="py-op">[</tt><tt class="py-name">scope</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-351" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-351', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-352" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-352', 'loads', 'link-105');">loads</a></tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">                                <tt class="py-comment">#self.call.stores = p.call.stores + self.call.stores    </tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">                                <tt class="py-keyword">for</tt> <tt class="py-name">p2</tt> <tt class="py-keyword">in</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-353" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-353', 'parents', 'link-61');">parents</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">                                        <tt class="py-name">p2</tt><tt class="py-op">.</tt><tt id="link-354" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-354', 'level', 'link-223');">level</a></tt> <tt class="py-op">-=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-355" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-355', 'parents', 'link-61');">parents</a></tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">p</tt><tt class="py-op">)</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-356" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-356', 'parents', 'link-61');">parents</a></tt> <tt class="py-op">+=</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-357" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-357', 'parents', 'link-61');">parents</a></tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line">                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-358" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-358', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-359" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-359', 'args', 'link-17');">args</a></tt> <tt class="py-op">+=</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-360" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-360', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-361" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-361', 'args', 'link-17');">args</a></tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-362" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-362', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-363" class="py-name"><a title="kernel.kernel.clean" class="py-name" href="#" onclick="return doclink('link-363', 'clean', 'link-198');">clean</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">                                <tt class="py-comment">#self.cullRedeclarations()</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">                                <tt class="py-keyword">print</tt> <tt class="py-name">self</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">                                <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">                        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">                                <tt class="py-keyword">print</tt> <tt class="py-string">"Could not compact"</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">                                <tt class="py-keyword">return</tt> <tt class="py-name">False</tt>     </tt>
+</div><a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">                                 </tt>
+<a name="fusionNode.reorder"></a><div id="fusionNode.reorder-def"><a name="L264"></a><tt class="py-lineno">264</tt> <a class="py-toggle" href="#" id="fusionNode.reorder-toggle" onclick="return toggle('fusionNode.reorder');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion.fusionNode-class.html#reorder">reorder</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fusionNode.reorder-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="fusionNode.reorder-expanded"><a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">                <tt class="py-docstring">"""Take any things in the first scope and shuffle them around.  Declarations and asynchronous reads go to the top!"""</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">                <tt class="py-name">decs</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">                <tt class="py-name">asyncs</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">                <tt class="py-name">assigns</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">statement</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-364" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-364', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-365" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-365', 'loads', 'link-105');">loads</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">                        <tt class="py-comment">#move delcarations to the top   </tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-366" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-366', 'type', 'link-4');">type</a></tt> <tt class="py-op">==</tt> <tt class="py-string">'DECLARATION'</tt><tt class="py-op">:</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">                                <tt class="py-keyword">if</tt> <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-367" class="py-name" targets="Variable statements.Statement.isMoveable=statements.Statement-class.html#isMoveable"><a title="statements.Statement.isMoveable" class="py-name" href="#" onclick="return doclink('link-367', 'isMoveable', 'link-367');">isMoveable</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-368" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-368', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-369" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-369', 'loads', 'link-105');">loads</a></tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">statement</tt><tt class="py-op">)</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">                                        <tt class="py-name">decs</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">statement</tt><tt class="py-op">)</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line">                        <tt class="py-comment">#move asynchronous operations to just below declarations</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">                        <tt class="py-keyword">elif</tt> <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-370" class="py-name"><a title="function.function.type
+fusion.funfusion.type
+fusion.fusionTree.type
+statements.Statement.type
+tokens.dirtyToken.type" class="py-name" href="#" onclick="return doclink('link-370', 'type', 'link-4');">type</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">[</tt><tt class="py-string">'DECLARATION'</tt><tt class="py-op">,</tt><tt class="py-string">'DECLARATIONASSIGMENT'</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">                                <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-371" class="py-name"><a title="statements.Statement.search" class="py-name" href="#" onclick="return doclink('link-371', 'search', 'link-308');">search</a></tt><tt class="py-op">(</tt><tt class="py-string">"async_work_group_copy"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">                                        <tt class="py-keyword">if</tt> <tt class="py-name">statement</tt><tt class="py-op">.</tt><tt id="link-372" class="py-name"><a title="statements.Statement.isMoveable" class="py-name" href="#" onclick="return doclink('link-372', 'isMoveable', 'link-367');">isMoveable</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">                                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-373" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-373', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-374" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-374', 'loads', 'link-105');">loads</a></tt><tt class="py-op">.</tt><tt class="py-name">remove</tt><tt class="py-op">(</tt><tt class="py-name">statement</tt><tt class="py-op">)</tt> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">                                                <tt class="py-name">asyncs</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">statement</tt><tt class="py-op">)</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">                        <tt class="py-string">"""</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line"><tt class="py-string">                        elif statement.type == 'ASSIGMENT':</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line"><tt class="py-string">                                if(statement.search("async_work_group_copy")):</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line"><tt class="py-string">                                        if statement.isMoveable:</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line"><tt class="py-string">                                                self.call.loads.remove(statement)</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line"><tt class="py-string">                                                assigns.append(statement)                               </tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line"><tt class="py-string">                        """</tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-375" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-375', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-376" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-376', 'loads', 'link-105');">loads</a></tt> <tt class="py-op">=</tt> <tt class="py-name">decs</tt> <tt class="py-op">+</tt> <tt class="py-name">asyncs</tt> <tt class="py-op">+</tt> <tt class="py-name">assigns</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-377" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-377', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-378" class="py-name"><a title="kernel.kernel.loads" class="py-name" href="#" onclick="return doclink('link-378', 'loads', 'link-105');">loads</a></tt><tt class="py-op">;</tt> </tt>
+</div><a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line">         </tt>
+<a name="fusionNode.__str__"></a><div id="fusionNode.__str__-def"><a name="L290"></a><tt class="py-lineno">290</tt> <a class="py-toggle" href="#" id="fusionNode.__str__-toggle" onclick="return toggle('fusionNode.__str__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="fusion.fusionNode-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fusionNode.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="fusionNode.__str__-expanded"><a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line">                <tt class="py-name">string</tt>  <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-379" class="py-name"><a title="fusion.fusionNode.level
+statements.Statement.level" class="py-name" href="#" onclick="return doclink('link-379', 'level', 'link-223');">level</a></tt><tt class="py-op">*</tt><tt class="py-string">"\t"</tt> <tt class="py-op">+</tt> <tt class="py-string">"__kernel void "</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-380" class="py-name"><a title="function.function.ID
+function.functionCall.ID
+fusion.fusionNode.ID
+kernel.kernel.ID
+tokens.dirtyToken.ID" class="py-name" href="#" onclick="return doclink('link-380', 'ID', 'link-14');">ID</a></tt><tt class="py-op">.</tt><tt id="link-381" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-381', 'value', 'link-3');">value</a></tt> <tt class="py-op">+</tt> <tt class="py-string">"("</tt> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-382" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-382', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-383" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-383', 'args', 'link-17');">args</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line">                        <tt class="py-keyword">for</tt> <tt class="py-name">item</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-384" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-384', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-385" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-385', 'args', 'link-17');">args</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">                                <tt class="py-name">string</tt> <tt class="py-op">+=</tt> <tt class="py-name">item</tt><tt class="py-op">.</tt><tt id="link-386" class="py-name"><a title="tokens.dirtyToken.value" class="py-name" href="#" onclick="return doclink('link-386', 'value', 'link-3');">value</a></tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">i</tt> <tt class="py-op">!=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-387" class="py-name"><a title="function.function.call
+function.functionCall.call
+fusion.fusionNode.call
+kernel.kernel.call" class="py-name" href="#" onclick="return doclink('link-387', 'call', 'link-5');">call</a></tt><tt class="py-op">.</tt><tt id="link-388" class="py-name"><a title="function.function.args
+function.functionCall.args
+fusion.fusionNode.args
+kernel.kernel.args
+kernelInvocation.KernelInvocation.args" class="py-name" href="#" onclick="return doclink('link-388', 'args', 'link-17');">args</a></tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">                                <tt class="py-name">string</tt> <tt class="py-op">+=</tt> <tt class="py-string">","</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line">                <tt class="py-name">string</tt> <tt class="py-op">+=</tt> <tt class="py-string">")\n"</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-389" class="py-name"><a title="fusion.fusionNode.parents
+tokens.dirtyToken.parents" class="py-name" href="#" onclick="return doclink('link-389', 'parents', 'link-61');">parents</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line">                        <tt class="py-name">string</tt> <tt class="py-op">+=</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">p</tt><tt class="py-op">)</tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">string</tt> </tt>
+</div></div><a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Kfusion</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Nov  8 17:43:01 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
