@@ -1,8 +1,7 @@
 #KFusion
-
 A tool which re-modularizes OpenCL code at compile time to improve performance.  It combines kernels and functios in order to amortize memory access costs associated with bandwidth and latency.  It is aimed at GPGPU computing, but works for any platform OpenCL is capable of executing on.  KFusion allows a user to use simple pragmas to fuse functions and their underlying kernels.  This supports abstraction, but completes low level trasnformations in order to improve performance.
 
-##Invocaton
+##Kfusion Invocaton
 Kfusion is a prototype tool implemented in python.  The main preprocessor is preprocessor and it takes three inputs:
 
 1. The main file which executes a series of library functions to be fused.
@@ -19,13 +18,14 @@ Each set of files is assumed to be annotated.  This allows a library developer t
 
 ##Examples and Case Studies
 Examples of how to build/leverage Kfusion enabled libraries can be seen in the three case studes included in this project.  Feel free to extend these to meet your needs.
-
 * **imagMan** - contains a series image manipulation operations and operates on png files. This provides the best performance case for KFusion.
 * **lclBlas** - contains a small linear algebra library, suitable for such things as the conjugate gradient method
 * **physics** - contains a simple rigid body simulation used to create a pool game.  Needs to be extended to handle more complex physical interaction between the pool balls and table, but it's a good start.
 
-##Using Kfusion Libraries
-###Aplication annotation
+##Using KFusion Libraries
+In order to use KFusion, it requires an OpenCL library annotated as given below.  Given a library, fusing functions and kernels can be done entirely at the application level:
+
+###Application level Annotations
 At the application level, a user can annotate which functions to fuse using 2 easy to use pragmas:
 * #Pragma startfuse
 * #Pragma endfuse
