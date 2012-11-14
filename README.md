@@ -63,3 +63,7 @@ There are three kernel annotations.
 The immovable pragma prevents potentially destructive operations.
 
 The following pragmas denote load and store operations.  These will be used to fuse kernels.  Fusion occurs by matching input and outputs in order to build a dependency tree.  The tree is collapsed by matching inputs to outputs.  Asynchronous instructions are rearranged and then the final result is output.  This amortizes costs and greatly improves performance - on par with hand fused kernels.
+
+Thanks
+
+--Liam
