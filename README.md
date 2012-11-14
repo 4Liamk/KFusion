@@ -29,6 +29,7 @@ Examples of how to build/leverage Kfusion enabled libraries can be seen in the t
 At the application level, a user can annotate which functions to fuse using 2 easy to use pragmas:
 * #Pragma startfuse
 * #Pragma endfuse
+
 Any functions within this region will be combined using Kfusion.  This will produce a new function and new kernel which combines the functionality within the pragmas.  It's important to note, KFusion eliminates intermediate results and therefore will only produce the result of the last function fused.
 
 ##Creating Kfusion Libraries
