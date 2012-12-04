@@ -201,6 +201,17 @@ class function:
 		string += ');\n'	
 		return string	
 
+	def printArguments(self):
+		string = ""
+		string +="("
+		for i in range(len(self.args)):
+			for tok in self.args[i]:
+				string += tok.value + " "
+			if(i < len(self.args)-1):
+				string += ","
+		string += ')\n'	
+		return string		
+
 	def replaceArg(self,i, arg):
 		"""replace an argument and the propogate the replacement as Dirty Tokens
 			@param: i: argument number i

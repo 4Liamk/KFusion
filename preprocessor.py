@@ -7,7 +7,7 @@ from function import *
 from kernelInvocation import *
 from kernel import *
 from fusion import *
-			
+from config import *		
 
 replacements = dict()
 
@@ -24,7 +24,8 @@ replacements = dict()
 	Main file requirements:
 		The main file should call an init function and be where all the fusion statement are.  
 		These statements should involve library functions, if functions are not found within the library, this will cause an error
-		the init function must be called "init".  init should take two integers as arguments.  This should change to be a more general case.
+		the init function must be called "init".  This should take care of all your OpenCL startup
+		
 	Library File:
 		The library file needs a series of global variables for the OpenCL context.  some of these will require specific names like in the example file as listed here:
 			cl_context context;
@@ -54,24 +55,33 @@ def main():
 	kernelfile = sys.argv[3]	#"kernels.cl"
 	namespace = "../imagproc-c/lclImage"
 	
+	#handle what the library header file will be
 	temp = libfile.split(".")[0] + ".h"
 	headerFileName = libfile.split(".")[0] + ".h"
 	header = open(temp,"r")
 	lexer = lex.lex()
 	
+	#update types and protected words:
+	global protectedWords
+	protectedWords += additionalProtectedWords
+	
+	#open up the new mainfile
 	temp = mainfile.split(".")[0] + "-out." + mainfile.split(".")[1]
 	mainout = open(temp,"w")
 	
+	#open new libfile 
 	temp = libfile.split(".")[0] + "-out." + libfile.split(".")[1]
 	libout = open(temp,"w")
 	
+	#open new kernel file
 	temp = kernelfile.split(".")[0] + "-out." + kernelfile.split(".")[1]
 	kernelout = open(temp,"w")
 	
+	#open new header file
 	temp= libfile.split(".")[0] + "-out.h"
 	headerout=open(temp,"w")
 	
-
+	#set of some replacements.  Basically whenever kernel.cl is referenced in the source code we need to actually reference kernel-out.cl
 	replacements["\""+libfile.split(".")[0] + ".h" + "\""] = "\""+libfile.split(".")[0] + "-out.h" + "\""
 	replacements["\""+kernelfile+"\""] = "\""+ kernelfile.split(".")[0] + "-out." + kernelfile.split(".")[1] + "\""
 
@@ -79,9 +89,16 @@ def main():
 	state = 0
 	calls = []
 	
-	#collection of fused calls
+	#functions we need to keep track of:
+	#need to write a new init functiono which calls the old one, this bridges the gap
+	initializationFunction = ""
+	
+	#collection of fused calls to be used later
 	fusedfunctions = []
+	
+	
 	print "Kernel File Analysis"
+	#set up lexer for kernel files
 	lexer = TokenReader(kernelfile,replacements,kernelout)
 	kernels = []
 	while True:
@@ -94,7 +111,9 @@ def main():
 
 	print "Library Analysis"
 	""""
-	plow through our library an make some functions 
+		plow through our library to collect library information
+		The key thing here is collect synchronization info
+		Function we want to leverage later (init) are assigned to relevant variables
 		"""		   
 	state = 0
 	pre = 0
@@ -126,6 +145,8 @@ def main():
 				break
 			   if(tok3.type == 'LPAREN'):
 				functions.append(function(tok,tok2,lexer))
+				if(tok2.value == "init"):
+					initializationFunction = functions[-1]
 				functions[-1].isSyncIn = isSyncIn
 				functions[-1].isSyncOut = isSyncOut
 				isSyncIn = False
@@ -247,12 +268,25 @@ def main():
 	for fun in fusions:
 		libout.write("cl_kernel " + fun.newKernel + ";\n")
 		libout.write(str(fun))
-			
-	libout.write("void initFusion(int one, int two)\n{\n")
-	string = "\tinit(one, two);\n"
+		
+		
+	#create new initialization function based on the previous one
+	libout.write("void initFusion")
+	libout.write(initializationFunction.printArguments())
+	libout.write("{\n")
+	
+	#call the original with the correct arguments
+	string = "\tinit("
+	for arg in initializationFunction.args:
+		string += arg[-1].value
+		if(arg != initializationFunction.args[-1]):
+			string += ","
+		else:
+			string += ");\n"
+	
 	string += "cl_int result;\n"
 	for fun in fusions:
-		string += "\t" + fun.newKernel + "= clCreateKernel(program,\""+fun.newKernel.split("kernel")[0].strip()
+		string += "\t" + fun.newKernel + "= clCreateKernel("+ clProgramName +",\""+fun.newKernel.split("kernel")[0].strip()
 		
 		if(fun.ftype == 'HORIZONTAL'):
 			string += 'h'
@@ -271,7 +305,7 @@ def main():
 	for fun in fusions:
 		headerout.write(str(fun.call()))
 		headerout.write("extern cl_kernel " + fun.newKernel + ";\n")
-	headerout.write("void initFusion(int one, int two);\n")
+	headerout.write("void initFusion"+initializationFunction.printArguments()+";\n")
 	headerout.write("#endif\n")
 	headerout.close()
 

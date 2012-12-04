@@ -9,7 +9,7 @@
 #include <sys/time.h>
 #include <CL/cl.h>
 #include <Magick++.h>
-#define OUTPUT 0
+#define OUTPUT 1
 #define DEPTH 4 
 
 //using namespace Magick;
@@ -547,14 +547,21 @@ void complicated(char * comp, char * other)
 	del_conv(sharpen3);		
 }
 
+
+/**
+
+*/
 int main(int argc,  char ** argv)
 {
-	if(argc < 2) 
+	if(argc < 4) 
 	{
-		printf("GAAAAH!");
+		printf("Correct usage is: imageTest <platform> <device> <TestImage1> <Test Image2> <iterations>");
 		exit(1);
 	}
-	init(atoi(argv[1]), atoi(argv[2]));	
+	init(atoi(argv[1]), atoi(argv[2]));
+	int iterations = 1000;	
+	if(argc > 4)
+		iterations = atoi(argv(5));
 	//printf("BestCase.Total\tBestCase.OperationsOnly\tBestCase.Fused.Total\tBestCase.Fused.OperationsOnly\tBestCase Manual All\tBest Case Manual Fusion\t\t");
 	//printf("AvgCase.Total\tAvgCase.Functions\tAvgCase.Fused.Total\tAvgCase.Fused.Operations\tManual.Fusion\tManual Fusion Operations Only\t\t");
 	//printf("Complicated.Total\tComplicated.Functions\tComplicated.Fused.Total\tComplicated.Fused.Operations\tManual.Fusion\tmanual fusion operations only\t\t");
