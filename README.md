@@ -3,7 +3,7 @@ A tool which re-modularizes OpenCL code at compile time to improve performance. 
 
 ##Dependencies
 
-KFusion requires [PLY](http://www.dabeaz.com/ply/) the Python Lex Yacc library.  It uses this in order to tokenize the underlying C code.
+KFusion requires [PLY](http://www.dabeaz.com/ply/) the Python Lex Yacc library.  It uses this in order to tokenize the underlying C code.  It seems the best way to ensure compatibility is to copy the ply folder found inside the ply download directly into KFusion directory.
 
 The examples are C programs as require MAKE as well as NVCC.  NVCC is the NVidia C compiler which correctly links in OpenCL, it is possible to use other OpenCL distributions during compilation, but this may require you to alter the makefiles.
 
