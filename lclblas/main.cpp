@@ -560,8 +560,8 @@ int main(int argc, char** argv)
 	for(int i = 0; i < tests; i++)
 	{
 		if(triangle(size)) perror("traingle: Low Dependency Test Failed");
-		distance(size) perror("distance: Medium Dependency test Failed");
-		cgStart(size) perror("cgStart: High Dependency test Failed");
+		if(distance(size)) perror("distance: Medium Dependency test Failed");
+		if(cgStart(size)) perror("cgStart: High Dependency test Failed");
 		//solve(size, 2);	
 		printf("\n");
 	}

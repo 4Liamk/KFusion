@@ -5,6 +5,7 @@
 #Each test is done 1000 times, the results are stored in gpu_results.x.txt and cpu_result.x.txt where x is the vector size
 
 #these variables set which platform and device the cpu is
+
 cpu_platform=1
 cpu_device=0
 

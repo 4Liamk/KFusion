@@ -19,4 +19,4 @@ clean:
 	rm main
 
 test: all
-	./main 0 0 1
+	./main 0 1 16 16
