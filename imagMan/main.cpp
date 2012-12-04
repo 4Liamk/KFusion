@@ -548,7 +548,7 @@ void complicated(char * comp, char * other)
 }
 
 
-/**
+/*
 
 */
 int main(int argc,  char ** argv)

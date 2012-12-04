@@ -27,6 +27,10 @@
 void init(int platform, int device);
 size_t getLocalSize(int global);
 
+/*
+ type: ConvMatrix
+ a convolution matrix type used
+*/
 typedef struct convMatrix
 {
 		cl_mem GPU_Matrix;
@@ -38,6 +42,9 @@ typedef struct convMatrix
 		int locality;
 }ConvMatrix;
 
+/*
+
+*/
 typedef struct image
 {
 		cl_mem GPU_Image;

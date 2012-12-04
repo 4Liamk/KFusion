@@ -170,60 +170,6 @@ void init(int platform, int device)
 	perror("compute kernels ready");	
 		
 }
-/*sooo we want to hide messages in images using lower 4 bits of each color in each pixel*/
-
-
-void encode(char * message, char * file)
-{
-	unsigned char * data;
-	unsigned int width;
-	unsigned int height;
-	LodePNG_decode32_file(&data, &width, &height, file);
-	FILE * messagefile = fopen(message,"r");
-	char buffer[512];
-	int marker = 0;
-	while(fgets(buffer,512,messagefile))
-	{
-		for(int i = 0;i < strlen(buffer); i++)
-		{
-			unsigned char upper = (buffer[i] >> 4) & 0b00001111;
-			unsigned char lower = (buffer[i]) & 0b00001111;
-			data[marker] = (data[marker] & 0b11110000) + upper;
-			data[marker+1] = (data[marker+1] & 0b11110000) + lower;
-			//printf("%c",(upper << 4) + lower);
-			marker +=2;
-		}
-	}
-	data[marker] = ('\0' >> 4) & 0b00001111;
-	data[marker+1] = ('\0') & 0b00001111;
-	strcpy(buffer,file);
-	strcat(buffer,"-output.png");
-	fclose(messagefile);
-	LodePNG_encode32_file(buffer,data, width, height);
-	
-}
-
-char * decode(char * outfile, char * image)
-{
-	unsigned char * data;
-	unsigned int width;
-	unsigned int height;
-	LodePNG_decode32_file(&data, &width, &height, image);
-	FILE * out = fopen(outfile,"w");
-	
-	for(int i = 0; i < width*height*DEPTH; i += 2 )
-	{
-		unsigned char upper = data[i] & 0b00001111;
-		unsigned char lower = data[i+1] & 0b00001111;
-		unsigned char total = (upper<<4) + lower;
-		if(total == '\0' || total == EOF) break;
-		fprintf(out,"%c",total);
-		printf("%c",total);
-		
-	}
-	fclose(out);
-}
-
 
 Image * new_ImageFromFile(char * file)
 {
