@@ -16,6 +16,7 @@ cl_device_id   device_list[8];
 cl_context context;
 cl_command_queue queue;
 
+//kernel information
 cl_kernel dotproduct_kernel;
 cl_kernel denseMult_kernel;
 cl_kernel vmult_kernel;
@@ -24,8 +25,16 @@ cl_kernel sum_kernel;
 cl_kernel vsqrt_kernel;
 cl_kernel mult_kernel;
 cl_program program;
+
+//debug flag, set to 1 to make execution verbose.  This will have a side effect of printing
 #define DEBUG 0
 
+/* init(int platform, int device)
+   This is the main initialization function.  It accomplishes all the OpenCL initiation required.
+
+   parameters: 
+   	int platform: which platform number to load. 0,0 is a fairly safe bet
+*/
 void init(int platform, int device)
 {
 	if(DEBUG) printf("----------------------------------------------\n");
@@ -37,29 +46,38 @@ void init(int platform, int device)
 	//platform information
  	if(DEBUG) perror("getting basic openCL data: platform info and number of devices");
 	
+	//Get OpenCL platform information
 	check(clGetPlatformIDs(8,platforms, &num_platforms));
 	printf("num platforms: %d\n",num_platforms);
 	//get info for first platform
 	unsigned int num_devices = 0;
+	//go through each platform and collect its information, print out a bunch of it for debugging purposes
 	for(i = 0; i < num_platforms; i++)
 	{
 		if(DEBUG) printf("Platform %d\n", i);
+		
 		check(clGetPlatformInfo(platforms[i], CL_PLATFORM_PROFILE, (size_t) 32, (void*)	param_value_buffer, &param_value_size_ret));
  		if(DEBUG) printf("\tProfile: %s\n",(char*) param_value_buffer);	
+
 		check(clGetPlatformInfo(platforms[i], CL_PLATFORM_VERSION , (size_t) 32, (void*)	param_value_buffer, &param_value_size_ret));
  		if(DEBUG) printf("\tVersion: %s\n", (char*) param_value_buffer);	
+
 		check(clGetPlatformInfo(platforms[i], CL_PLATFORM_NAME, (size_t) 32, (void*)	param_value_buffer, &param_value_size_ret));
  		if(DEBUG) printf("\tName: %s\n", (char*) param_value_buffer);	
+
 		check(clGetPlatformInfo(platforms[i], CL_PLATFORM_VENDOR, (size_t) 32, (void*)	param_value_buffer, &param_value_size_ret));
  		if(DEBUG) printf("\tVendor: %s\n",(char*)  param_value_buffer);	
+ 		
 		//check(clGetPlatformInfo(platforms[i], CL_PLATFORM_EXTENSIONS, (size_t) 32,(void*) param_value_buffer, &param_value_size_ret));
- 		if(DEBUG) printf("\tExtensions: %s\n",(char*)  param_value_buffer);	
+ 		//if(DEBUG) printf("\tExtensions: %s\n",(char*)  param_value_buffer);	
+ 		
 		check(clGetPlatformInfo(platforms[i], CL_PLATFORM_PROFILE, (size_t) 32, (void*)	param_value_buffer, &param_value_size_ret));	
 		check(clGetDeviceIDs(platforms[i], CL_DEVICE_TYPE_ALL, 8, device_list, &num_devices));
 	
 		char p1[512];
 		p1[511] = '\0';
 		if(DEBUG) printf("\tnum devices: %d\n\n", num_devices);
+		//go through each device, print out relevant info and collect required information
 		for(i = 0; i < num_devices; i++)
 		{
 			cl_ulong size;
@@ -75,21 +93,20 @@ void init(int platform, int device)
 			if(DEBUG) printf("\t\tmemory available: %d\n", i, p1[0]);
 		}	
 	}
+	//get the device list of the chosen platform
 	check(clGetDeviceIDs(platforms[platform], CL_DEVICE_TYPE_ALL, 8, device_list, &num_devices));
+
 	//create compute context over all available devices
 	context = clCreateContext(NULL,1,&device_list[device],NULL,NULL,&result);	
 	//check(result);	
 
-	//get devices available to context
+	//get devices available to context and collect their information
 	size_t nContextDescriptorSize = 0;
-	
 	clGetContextInfo(context, CL_CONTEXT_DEVICES, 0, 0, &nContextDescriptorSize);
-	
 	cl_device_id * aDevices = (cl_device_id*) malloc(nContextDescriptorSize);
-	
 	clGetContextInfo(context, CL_CONTEXT_DEVICES, nContextDescriptorSize, aDevices, 0);	
 
-	//make cpu queue
+	//make OpenCL queue for target device
 	queue = clCreateCommandQueue(context,aDevices[0],COMMAND_QUEUE_ARGS,&result);
 	//check(result);
 
@@ -127,6 +144,7 @@ void init(int platform, int device)
     	}
     	
     	if(DEBUG) perror("program built");
+
 	//build compute kernel
 	dotproduct_kernel = clCreateKernel(program,"dotproduct",&result);
 	sum_kernel = clCreateKernel(program,"sum",&result);

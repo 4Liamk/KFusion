@@ -10,7 +10,30 @@ from fusion import *
 			
 
 replacements = dict()
-	
+
+"""
+	KFusion preprocessor.  This will go through your source files and produce new ones.  
+	The process is verbose and somewhat unpolished.  This means it is somewhat stricts
+
+	File requirements:
+		KFusion expects three files: a mainfile, a library file and a kernel file.
+		It also expects for library lib.cpp or lib.c there is a header file lib.h which has the appropriate header guards.
+		KFusion will produce another set of files which have the original name appended with -out
+		main.c library.c library.h kernel.cl ==> main-out.c library-out.c library-out.h kernel-out.cl
+
+	Main file requirements:
+		The main file should call an init function and be where all the fusion statement are.  
+		These statements should involve library functions, if functions are not found within the library, this will cause an error
+		the init function must be called "init".  init should take two integers as arguments.  This should change to be a more general case.
+	Library File:
+		The library file needs a series of global variables for the OpenCL context.  some of these will require specific names like in the example file as listed here:
+			cl_context context;
+			cl_command_queue queue;
+			cl_program program;
+	Kernel File:
+		The kernel file needs each of it's kernels annotated using #pragma load and #pragma store
+
+"""	
 def main():
 	"""Main method:
 		read in from three files: main, library and kernel.  
@@ -240,6 +263,7 @@ def main():
 	libout.write(string)
 
 	#add used function definitions to the header file
+	#this assumes you use header guards.  If you don't it will add an extraneous #endif at the end 
 	print "Updating library header file"
 	for line in header:
 		if(line.strip() != "#endif"):
@@ -252,7 +276,7 @@ def main():
 	headerout.close()
 
 	#create the new kernels
-	"Created new Kernels"
+	print "Creating new Kernels"
 	setOutput(kernelout)
 	for fun in fusions:
 		tofuse = []

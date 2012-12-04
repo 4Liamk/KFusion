@@ -12,9 +12,12 @@
 
 char * MATRIX;
 int LSIZE = 16;
-#define DEBUG 0
-#define CHECK 0
 
+//flags to ensure
+#define DEBUG 0
+#define CHECK 1
+
+//Simple helper function for getting the time as a double
 double gettime()
 {
 	struct timeval start;
@@ -22,6 +25,10 @@ double gettime()
 	return (double)start.tv_sec + start.tv_usec/1000000.0;
 }
 
+/*
+  Low Dependency Case Fused
+  This calculates
+*/
 int trianglefused(int size)
 {
 	if(DEBUG) perror("Triangle");
@@ -59,6 +66,7 @@ int trianglefused(int size)
 			if(result != c->cpu_vals[i])
 			{
 				printf("failed on %d: %f != %f\n",i,result, c->cpu_vals[i]);
+				return 1;
 			}
 		}
 	}
@@ -105,14 +113,14 @@ int triangle(int size)
 			if(result != c->cpu_vals[i])
 			{
 				printf("failed on %d/%d: %f %f %f != %f\n",i,size,a->cpu_vals[i],b->cpu_vals[i],result, c->cpu_vals[i]);
+				return 1;
 			}
 		}
 	}
 	deleteVector(a);
 	deleteVector(b);
 	deleteVector(c);
-	trianglefused(size);	
-	return 0;
+	return trianglefused(size);
 }
 
 
@@ -163,6 +171,7 @@ int distance2(int size)
 			if(result != c->cpu_vals[i])
 			{
 				printf("failed on %d: %f %f %f != %f\n",i,x1->cpu_vals[i],y1->cpu_vals[i],c->cpu_vals[i],result);
+				return 1;
 			}
 		}
 	}	
@@ -171,6 +180,7 @@ int distance2(int size)
 	deleteVector(x2);
 	deleteVector(y1);
 	deleteVector(y2);		
+	return 0;
 }
 
 int distance(int size)
@@ -218,15 +228,18 @@ int distance(int size)
 			if(result != c->cpu_vals[i])
 			{
 				printf("failed on %d: %f %f %f != %f\n",i,result,x1->cpu_vals[i],y1->cpu_vals[i], c->cpu_vals[i]);
+				return 1;
 			}
 		}
 	}
-	distance2(size);
+
 	deleteVector(c);
 	deleteVector(x1);
 	deleteVector(x2);
 	deleteVector(y1);
-	deleteVector(y2);						
+	deleteVector(y2);
+	return distance2(size);		
+	return 0;			
 }
 
 
@@ -276,7 +289,10 @@ int cgStartFused(int size,Vector * result)
 		for(int i = 0; i < size; i++)
 		{
 			if(r->cpu_vals[i] != result->cpu_vals[i])
+			{
 				printf("%d: %f != %f\n",i,r->cpu_vals[i], result->cpu_vals[i]);
+				return 1;
+			}
 		}
 	}	
 	deleteVector(x);
@@ -285,8 +301,11 @@ int cgStartFused(int size,Vector * result)
 	deleteVector(b2);
 	deleteVector(p);	
 	deleteMatrix(A);
+	deleteVector(result);
+	return 0;
 }
 
+//the first few operations of the conjugate gradient algorithm
 int cgStart(int size)
 {
 	if(DEBUG) perror("Start");
@@ -340,8 +359,9 @@ int cgStart(int size)
 	deleteVector(b2);
 	deleteVector(p);	
 	deleteMatrix(A);
-	cgStartFused(size,r);
-	deleteVector(r);
+	return cgStartFused(size,r);
+	
+
 }
 
 
@@ -526,15 +546,6 @@ int solve(int size, int itr)
 	deleteVector(x);
 }
 
-int other(int size)
-{
-	Vector * a = newVector(size,LSIZE);
-	Vector * b = newVector(size,LSIZE);
-	Vector * c = newVector(size,LSIZE);
-	Vector * c2 = newVector(size,LSIZE);
-	Vector * c3 = newVector(size,LSIZE);
-}
-
 int main(int argc, char** argv)
 {
 	int iterations;
@@ -542,14 +553,18 @@ int main(int argc, char** argv)
 	int device = atoi(argv[2]);
 	int size = atoi(argv[3]);
 	int tests = atoi(argv[4]);
+
+	//initialize OpenCL
 	init(platform, device);
+
 	for(int i = 0; i < tests; i++)
 	{
-		triangle(size);
-		distance(size);
-		cgStart(size);
+		if(triangle(size)) perror("traingle: Low Dependency Test Failed");
+		distance(size) perror("distance: Medium Dependency test Failed");
+		cgStart(size) perror("cgStart: High Dependency test Failed");
 		//solve(size, 2);	
 		printf("\n");
 	}
+	printf("program functioned Correctly");
 	return 0;
 }

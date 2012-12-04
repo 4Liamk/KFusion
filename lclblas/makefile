@@ -17,3 +17,6 @@ main: $(OBJ)
 clean: 
 	rm *.o
 	rm main
+
+test: all
+	./main 0 0 1

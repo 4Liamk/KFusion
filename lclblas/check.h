@@ -2,7 +2,7 @@
 #define CHECK_H_
 
 #include <stdio.h>
-
+/*An error checking function which will produce the correct OpenCL error code given an integer*/
 inline const char *check2(int errcode) {
   switch (errcode) {
     case CL_SUCCESS:
