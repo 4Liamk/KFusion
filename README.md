@@ -1,6 +1,12 @@
 #KFusion
 A tool which re-modularizes OpenCL code at compile time to improve performance.  It combines kernels and functios in order to amortize memory access costs associated with bandwidth and latency.  It is aimed at GPGPU computing, but works for any platform OpenCL is capable of executing on.  KFusion allows a user to use simple pragmas to fuse functions and their underlying kernels.  This supports abstraction, but completes low level trasnformations in order to improve performance.
 
+##Dependencies
+
+KFusion requires [PLY](http://www.dabeaz.com/ply/) the Python Lex Yacc library.  It uses this in order to tokenize the underlying C code.
+
+The examples are C programs as require MAKE as well as NVCC.  NVCC is the NVidia C compiler which correctly links in OpenCL, it is possible to use other OpenCL distributions during compilation, but this may require you to alter the makefiles.
+
 ##Kfusion Invocaton
 Kfusion is a prototype tool implemented in python.  The main preprocessor is preprocessor and it takes three inputs:
 
