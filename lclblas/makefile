@@ -6,7 +6,7 @@ OBJ =  main-out.o reader.o mreader.o sparse-out.o
 all: preproc main
 
 preproc: main.cpp sparse.cpp sparse.h kernel.cl
-	python ../preproc2.py main.cpp sparse.cpp kernel.cl
+	python ../preprocessor.py main.cpp sparse.cpp kernel.cl
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
