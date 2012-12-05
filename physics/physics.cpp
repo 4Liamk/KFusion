@@ -320,6 +320,7 @@ void DisplayGL()
 
 }
 
+//setup the game.  It sets all the required variables to be what they need to be!
 void rack(Game * g)
 {
 	double y;
@@ -502,6 +503,7 @@ void init(int platform, int device)
 	rack(&g);
 }
 
+//impart force on queueball
 void impulse(Game *g)
 {
 	//__kernel void impulse(__global TYPE4 * vel, __global TYPE4 * stats,const TYPE angle, const TYPE power)
@@ -513,6 +515,7 @@ void impulse(Game *g)
 	check(clEnqueueNDRangeKernel(queue,impulse_kernel,1,0,&gsize,NULL,0,NULL,NULL));	
 }
 
+//move the balls forward
 void moveBalls(Game *g,TYPE timestep)
 {
 	//__kernel void moveballs(__global TYPE4 * pos,__global  TYPE4 * vel,__global  TYPE4 * stats,__global  TYPE4 * table, const TYPE timestep)
@@ -525,6 +528,7 @@ void moveBalls(Game *g,TYPE timestep)
 	check(clEnqueueNDRangeKernel(queue,moveballs_kernel,1,0,&gsize,NULL,0,NULL,NULL));	
 }
 
+//collide balls with wall
 void collideWalls(Game*g)
 {
 	size_t gsize = NUMBER_OF_BALLS;
@@ -557,6 +561,7 @@ void ball_transfer(Balls*b,int dest)
 	}
 }
 
+//balls collide with pockets
 void collidePockets(Game * g)
 {
 	size_t gsize = NUMBER_OF_BALLS;
@@ -568,6 +573,7 @@ void collidePockets(Game * g)
 	check(clEnqueueNDRangeKernel(queue,pocketCollisions_kernel,1,0,&gsize,NULL,0,NULL,NULL));	
 }
 
+//collide balls with balls
 void collideBalls(Game*g,TYPE timestep)
 {
 	size_t gsize = NUMBER_OF_BALLS;
@@ -591,5 +597,3 @@ void table_transfer(Table*t,int dest)
 	{
 	}
 }
-
-

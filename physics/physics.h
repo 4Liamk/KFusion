@@ -32,6 +32,7 @@ typedef struct d4
 	
 }double4;
 
+//balls data type, encompases more or less the entire game.  Everything is a 4 element vector as theis transfers well to OpenCL
 typedef struct balls
 {
 	int num;
@@ -43,14 +44,16 @@ typedef struct balls
 	cl_mem gpu_stats;
 }Balls;
 
+//Table datatype, contains the relevant table information.  
 typedef struct table
 {
 	TYPE4 stats; //width,height,depth,???
-	TYPE4 pockets[6]; //x,y,z,radius,???
+	TYPE4 pockets[6]; //x,y,z,radius
 	cl_mem gpu_stats;
 	cl_mem gpu_pockets;
 }Table;
 
+//contains all the game information.
 typedef struct game
 {
 	Balls b;
@@ -63,12 +66,28 @@ typedef struct game
 void init(int platform, int device);
 
 //transfer functions
+/* move data to and from the ball
+ * 
+ */
 void ball_transfer(Balls * b, int dest);
 void table_transfer(Table * t, int dest);
 
+/* transfer momentum to the queue ball, 
+ * takes the game state and starts the ball rolling 
+ */
 void impulse(Game * g);
+
+/* move the balls forward,
+ * Game: g, TYPE timestep 
+ */
 void moveBalls(Game*g,TYPE timestep);
+
+/* Collision functions.  Each is self explanitor in targe
+ * It is colliding the 16 balls found in pool which various object
+ * collideBalls, collidePockets, CollideWalls
+ */
 void collideBalls(Game*g,TYPE timestep);
+
 void collidePockets(Game*g);
 void collideWalls(Game*g);
 
@@ -96,9 +115,13 @@ extern cl_kernel impulse_kernel; //hit the queue ball
 
 //OpenGL Info/Vars/functions
 extern int keys[16];
+//initialization
 void InitGL(int* argc, char** argv);
+//draw callback
 void DisplayGL();
+//keyboard callback
 void KeyboardGL(unsigned char key, int x, int y);
+//idle callback: runs the actual simulation in between when it is being drawn
 void Idle();
 void timerEvent(int value);
 extern int stopped;
