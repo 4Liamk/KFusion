@@ -145,7 +145,7 @@ void init(int platform, int device)
     	
     	if(DEBUG) perror("program built");
 
-	//build compute kernel
+	//build compute kernels: dot product, summation, multiply, vector multiply, vsqrt, add, denseMul
 	dotproduct_kernel = clCreateKernel(program,"dotproduct",&result);
 	sum_kernel = clCreateKernel(program,"sum",&result);
 	mult_kernel = clCreateKernel(program,"mult",&result);
@@ -306,6 +306,7 @@ void vector_gpu_sqrt(Vector * c, Vector * a)
 
 }
 
+//this is a helper function used by the dot product, interestingly we can use another level of abstraction to prevent this kernel from being fused with the previous
 void __sum(cl_mem * tmp, TYPE &val, int call, int reductionlength,size_t woot)
 {
 	cl_mem result	= clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(TYPE),NULL,&call);
@@ -317,6 +318,11 @@ void __sum(cl_mem * tmp, TYPE &val, int call, int reductionlength,size_t woot)
 	clReleaseMemObject(result);	
 }
 
+/*
+  Computes the dot product of a vector, what you may notice is that it is synchronize out
+  This is because the result requires a reduct, it is also noteworthy that this requires the execution of 2 kernels
+  In order to preserve the abstraction and synchronization it is sync out
+*/
 #pragma synchronize out
 void vector_gpu_dot(Vector * a, Vector * other, TYPE &val)
 {
@@ -336,6 +342,7 @@ void vector_gpu_dot(Vector * a, Vector * other, TYPE &val)
 	check(clSetKernelArg(dotproduct_kernel,2,sizeof(cl_mem),&tmp));
 	check(clEnqueueNDRangeKernel(queue,dotproduct_kernel,1,0,&a->length,&a->lsize,0,NULL,NULL));	
 	
+	//second kernel execution is hidden in this function call.  This preserved synchronization and allows for fusion!
 	__sum(&tmp, val,call,reductionlength,woot);
 	clReleaseMemObject(tmp);
 } 
@@ -426,6 +433,9 @@ void matrix_transfer(Matrix * A, int dest)
 	}
 	A->locality = dest;
 }
+
+//this function accomplishes a matrix vector multiplication and as such cannot be fused with previous function. 
+//This is why the synchronize in function has been added!
 #pragma synchronize in
 void denseMult(Vector * b, Matrix * A, Vector * x)
 {
