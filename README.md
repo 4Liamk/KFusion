@@ -1,11 +1,11 @@
 #KFusion
-A tool which re-modularizes OpenCL code at compile time to improve performance.  It combines kernels and functios in order to amortize memory access costs associated with bandwidth and latency.  It is aimed at GPGPU computing, but works for any platform OpenCL is capable of executing on.  KFusion allows a user to use simple pragmas to fuse functions and their underlying kernels.  This supports abstraction, but completes low level trasnformations in order to improve performance.
+A prototype tool which re-modularizes OpenCL code at compile time to improve performance.  It combines kernels and functios in order to amortize memory access costs associated with bandwidth and latency.  It is aimed at GPGPU computing, but works for any platform OpenCL is capable of executing on.  KFusion allows a user to use simple pragmas to fuse functions and their underlying kernels.  This supports abstraction, but completes low level trasnformations in order to improve performance.
 
 ##Dependencies
-
 KFusion requires [PLY](http://www.dabeaz.com/ply/) the Python Lex Yacc library.  It uses this in order to tokenize the underlying C code.  It seems the best way to ensure compatibility is to copy the ply folder found inside the ply download directly into KFusion directory.
 
 The examples are C programs as require MAKE as well as NVCC.  NVCC is the NVidia C compiler which correctly links in OpenCL, it is possible to use other OpenCL distributions during compilation, but this may require you to alter the makefiles.
+
 
 ##Kfusion Invocaton
 Kfusion is a prototype tool implemented in python.  The main preprocessor is preprocessor and it takes three inputs:
@@ -47,6 +47,7 @@ There are a few requirements which need to be met in order to use KFusion:
 * The library file should be seperate from the kernels which are loaded from a seperate text file.  This allows each to be eddited and new functions to be created.  
 * The libary must use an *void init(int argc, char ** argv)* function to initialize OpenCL and load kernels.  KFusion will build on this.
 * Each library function must call one kernel directly.
+* kFusion expects you to wrap OpenCL calls in a function refered to as check(short ERRCODE).  There are examples of this in check.c and check.h found in each of the example libraries
 
 ###Library Annotations
 At the library level, functions need to be annotated with regards to synchronization.  This details if a function requires synchronized output.  
@@ -71,6 +72,13 @@ The immovable pragma prevents potentially destructive operations.
 
 The following pragmas denote load and store operations.  These will be used to fuse kernels.  Fusion occurs by matching input and outputs in order to build a dependency tree.  The tree is collapsed by matching inputs to outputs.  Asynchronous instructions are rearranged and then the final result is output.  This amortizes costs and greatly improves performance - on par with hand fused kernels.
 
+##For Apple Users:
+You may have to make significant ---trying--- changes to the codebases in order to have them execute on Apple hardware.  Details on these changes will be coming
+
+##Issues
+KFusion is still a prototype tool and, while it works for the cases presented as examples here, may not work for all codebases.  It makes some assumptions and has limitations.  If it fails for you, feel free to contact me by email and let me know.
+
 Thanks
+
 
 --Liam
