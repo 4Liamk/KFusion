@@ -1,5 +1,7 @@
 CC=nvcc
-CFLAGS= -lOpenCL
+CXX=nvcc
+CFLAGS=-lOpenCL --profile
+CXXFLAGS=-pg -O2
 DEPS = check.h reader.h mreader.h sparse-out.h sparse.h
 OBJ =  main-out.o reader.o mreader.o sparse-out.o
 

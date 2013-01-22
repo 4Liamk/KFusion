@@ -48,7 +48,7 @@ __kernel void vmult(__global TYPE * c, const TYPE alpha, __global TYPE * a, cons
 	#pragma load
 	TYPE cVal;
 	
-	cVal = alpha*aVal*beta*bVal;
+	cVal = aVal*bVal;
 	
 	#pragma store
 	c[gid] = cVal;

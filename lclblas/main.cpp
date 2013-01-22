@@ -11,7 +11,7 @@
 #include "sys/time.h"
 
 char * MATRIX;
-int LSIZE = 16;
+int LSIZE = 128;
 
 /*
  This is the linear algebra case study.  It tests 3 fairly simple sets of equatiations and compares the fused vs unfused execution times
@@ -44,9 +44,9 @@ int trianglefused(int size)
 {
 	if(DEBUG) perror("Triangle");
 	//initial setup: create three vectors
-	Vector * a = newVector(size,16);
-	Vector * b = newVector(size,16);
-	Vector * c = newVector(size,16);
+	Vector * a = newVector(size,LSIZE);
+	Vector * b = newVector(size,LSIZE);
+	Vector * c = newVector(size,LSIZE);
 
 	//set the vectors to a known value
 	for(int i = 0; i < size; i++)
@@ -108,9 +108,9 @@ int triangle(int size)
 {
 	if(DEBUG) perror("Triangle Fused");
 	//setup
-	Vector * a = newVector(size,16);
-	vector * b = newVector(size,16);
-	vector * c = newVector(size,16);
+	Vector * a = newVector(size,LSIZE);
+	vector * b = newVector(size,LSIZE);
+	vector * c = newVector(size,LSIZE);
 	for(int i = 0; i < size; i++)
 	{
 		a->cpu_vals[i] = i;
@@ -163,11 +163,11 @@ int distance2(int size)
 	if(DEBUG) perror("Distance Fused");
 	
 	//setup 
-	Vector * x1 = newVector(size,16);
-	vector * x2 = newVector(size,16);
-	Vector * y1 = newVector(size,16);
-	vector * y2 = newVector(size,16);
-	vector * c = newVector(size,16);
+	Vector * x1 = newVector(size,LSIZE);
+	vector * x2 = newVector(size,LSIZE);
+	Vector * y1 = newVector(size,LSIZE);
+	vector * y2 = newVector(size,LSIZE);
+	vector * c = newVector(size,LSIZE);
 	
 	//assigment
 	for(int i = 0; i < size; i++)
@@ -616,8 +616,8 @@ int main(int argc, char** argv)
 	for(int i = 0; i < tests; i++)
 	{
 		if(triangle(size)) perror("traingle: Low Dependency Test Failed");
-		if(distance(size)) perror("distance: Medium Dependency test Failed");
-		if(cgStart(size)) perror("cgStart: High Dependency test Failed");
+	//	if(distance(size)) perror("distance: Medium Dependency test Failed");
+	//	if(cgStart(size)) perror("cgStart: High Dependency test Failed");
 		//solve(size, 2);	
 		printf("\n");
 	}
